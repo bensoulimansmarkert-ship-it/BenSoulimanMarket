@@ -1417,11 +1417,191 @@ function saveInventory(inventory) {
 
 /* =====================================================
    18. INITIALIZE
-========================================
+===================================================== */
 
-    ;()initializeLocalDatabase
-    )console.log
-    ,":BEN SULEIMAN SYSTEM"
-Local database initialized
-    ".successfully
-    ;(
+function initializeLocalDatabase() {
+
+    try {
+
+        if (!localStorage.getItem(STORAGE_KEYS.products)) {
+
+            localStorage.setItem(
+                STORAGE_KEYS.products,
+                JSON.stringify([])
+            );
+
+        }
+
+
+        if (!localStorage.getItem(STORAGE_KEYS.categories)) {
+
+            localStorage.setItem(
+                STORAGE_KEYS.categories,
+                JSON.stringify([])
+            );
+
+        }
+
+
+        if (!localStorage.getItem(STORAGE_KEYS.inventory)) {
+
+            localStorage.setItem(
+                STORAGE_KEYS.inventory,
+                JSON.stringify([])
+            );
+
+        }
+
+
+        if (!localStorage.getItem(STORAGE_KEYS.sales)) {
+
+            localStorage.setItem(
+                STORAGE_KEYS.sales,
+                JSON.stringify([])
+            );
+
+        }
+
+
+        if (!localStorage.getItem(STORAGE_KEYS.purchases)) {
+
+            localStorage.setItem(
+                STORAGE_KEYS.purchases,
+                JSON.stringify([])
+            );
+
+        }
+
+
+        if (!localStorage.getItem(STORAGE_KEYS.orders)) {
+
+            localStorage.setItem(
+                STORAGE_KEYS.orders,
+                JSON.stringify([])
+            );
+
+        }
+
+
+        if (!localStorage.getItem(STORAGE_KEYS.customers)) {
+
+            localStorage.setItem(
+                STORAGE_KEYS.customers,
+                JSON.stringify([])
+            );
+
+        }
+
+
+        if (!localStorage.getItem(STORAGE_KEYS.suppliers)) {
+
+            localStorage.setItem(
+                STORAGE_KEYS.suppliers,
+                JSON.stringify([])
+            );
+
+        }
+
+
+        if (!localStorage.getItem(STORAGE_KEYS.returns)) {
+
+            localStorage.setItem(
+                STORAGE_KEYS.returns,
+                JSON.stringify([])
+            );
+
+        }
+
+
+        if (!localStorage.getItem(STORAGE_KEYS.employees)) {
+
+            localStorage.setItem(
+                STORAGE_KEYS.employees,
+                JSON.stringify([])
+            );
+
+        }
+
+
+        if (!localStorage.getItem(STORAGE_KEYS.expenses)) {
+
+            localStorage.setItem(
+                STORAGE_KEYS.expenses,
+                JSON.stringify([])
+            );
+
+        }
+
+
+        if (!localStorage.getItem(STORAGE_KEYS.auditLogs)) {
+
+            localStorage.setItem(
+                STORAGE_KEYS.auditLogs,
+                JSON.stringify([])
+            );
+
+        }
+
+
+        console.log(
+            "BEN SULEIMAN SYSTEM: Local database initialized successfully."
+        );
+
+
+        return true;
+
+    } catch (error) {
+
+        console.error(
+            "BEN SULEIMAN SYSTEM: Database initialization error:",
+            error
+        );
+
+        return false;
+
+    }
+
+}
+
+
+/* =====================================================
+   19. EXPORT GLOBAL DATA HELPERS
+===================================================== */
+
+window.getBranches =
+    getBranches;
+
+window.getUsers =
+    getUsers;
+
+window.getProducts =
+    getProducts;
+
+window.getCategories =
+    getCategories;
+
+window.getInventory =
+    getInventory;
+
+window.getBranchById =
+    getBranchById;
+
+window.getUserById =
+    getUserById;
+
+window.getProductById =
+    getProductById;
+
+window.getProductByBarcode =
+    getProductByBarcode;
+
+window.saveProducts =
+    saveProducts;
+
+window.saveInventory =
+    saveInventory;
+
+
+/* =====================================================
+   END OF DATA.JS
+===================================================== */
