@@ -1,0 +1,4566 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <meta name="theme-color"
+          content="#071a2b">
+
+    <meta name="description"
+          content="لوحة التحكم - نظام إدارة سوبر ماركت بن سليمان">
+
+    <title>
+        لوحة التحكم | سوبر ماركت بن سليمان
+    </title>
+
+
+    <!-- =========================================
+         MAIN STYLE
+    ========================================== -->
+
+    <link rel="stylesheet"
+          href="css/style.css">
+
+
+    <!-- =========================================
+         DASHBOARD STYLE
+         سيتم إنشاء هذا الملف في مرحلة التصميم
+    ========================================== -->
+
+    <link rel="stylesheet"
+          href="css/dashboard.css">
+
+    <link rel="stylesheet"
+          href="css/responsive.css">
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     APPLICATION
+===================================================== -->
+
+<div id="app"
+     class="dashboard-app">
+
+
+    <!-- =================================================
+         MOBILE OVERLAY
+    ================================================== -->
+
+    <div id="sidebar-overlay"
+         class="sidebar-overlay">
+    </div>
+
+
+    <!-- =================================================
+         SIDEBAR
+    ================================================== -->
+
+    <aside id="sidebar"
+           class="sidebar">
+
+
+        <!-- =============================================
+             SIDEBAR HEADER
+        ============================================== -->
+
+        <div class="sidebar-header">
+
+
+            <div class="sidebar-logo">
+
+                <div class="logo-icon">
+
+                    🛒
+
+                </div>
+
+            </div>
+
+
+            <div class="sidebar-brand">
+
+                <h1>
+
+                    سوبر ماركت بن سليمان
+
+                </h1>
+
+                <span>
+
+                    نظام إدارة متكامل
+
+                </span>
+
+            </div>
+
+
+        </div>
+
+
+
+        <!-- =============================================
+             SIDEBAR DIVIDER
+        ============================================== -->
+
+        <div class="sidebar-divider"></div>
+
+
+
+        <!-- =============================================
+             NAVIGATION
+        ============================================== -->
+
+        <nav class="sidebar-navigation"
+             aria-label="القائمة الرئيسية">
+
+
+            <!-- -----------------------------------------
+                 01 - LOGIN
+            ------------------------------------------ -->
+
+            <a href="login.html"
+               class="nav-item"
+               data-page="login">
+
+                <span class="nav-number">
+
+                    1
+
+                </span>
+
+                <span class="nav-icon">
+
+                    🔐
+
+                </span>
+
+                <span class="nav-text">
+
+                    تسجيل الدخول
+
+                </span>
+
+            </a>
+
+
+
+            <!-- -----------------------------------------
+                 02 - DASHBOARD
+            ------------------------------------------ -->
+
+            <a href="dashboard.html"
+               class="nav-item active"
+               data-page="dashboard">
+
+                <span class="nav-number">
+
+                    2
+
+                </span>
+
+                <span class="nav-icon">
+
+                    📊
+
+                </span>
+
+                <span class="nav-text">
+
+                    لوحة التحكم (الرئيسية)
+
+                </span>
+
+            </a>
+
+
+
+            <!-- -----------------------------------------
+                 03 - POS
+            ------------------------------------------ -->
+
+            <a href="pos.html"
+               class="nav-item"
+               data-page="pos">
+
+                <span class="nav-number">
+
+                    3
+
+                </span>
+
+                <span class="nav-icon">
+
+                    🧾
+
+                </span>
+
+                <span class="nav-text">
+
+                    نقطة البيع (الكاشير)
+
+                </span>
+
+            </a>
+
+
+
+            <!-- -----------------------------------------
+                 04 - PRODUCTS
+            ------------------------------------------ -->
+
+            <a href="products.html"
+               class="nav-item"
+               data-page="products">
+
+                <span class="nav-number">
+
+                    4
+
+                </span>
+
+                <span class="nav-icon">
+
+                    📦
+
+                </span>
+
+                <span class="nav-text">
+
+                    المنتجات
+
+                </span>
+
+            </a>
+
+
+
+            <!-- -----------------------------------------
+                 05 - CATEGORIES
+            ------------------------------------------ -->
+
+            <a href="categories.html"
+               class="nav-item"
+               data-page="categories">
+
+                <span class="nav-number">
+
+                    5
+
+                </span>
+
+                <span class="nav-icon">
+
+                    🗂️
+
+                </span>
+
+                <span class="nav-text">
+
+                    الأقسام
+
+                </span>
+
+            </a>
+
+
+
+            <!-- -----------------------------------------
+                 06 - INVENTORY
+            ------------------------------------------ -->
+
+            <a href="inventory.html"
+               class="nav-item"
+               data-page="inventory">
+
+                <span class="nav-number">
+
+                    6
+
+                </span>
+
+                <span class="nav-icon">
+
+                    🏬
+
+                </span>
+
+                <span class="nav-text">
+
+                    إدارة المخزون
+
+                </span>
+
+            </a>
+
+
+
+            <!-- -----------------------------------------
+                 07 - PURCHASES
+            ------------------------------------------ -->
+
+            <a href="purchases.html"
+               class="nav-item"
+               data-page="purchases">
+
+                <span class="nav-number">
+
+                    7
+
+                </span>
+
+                <span class="nav-icon">
+
+                    🛒
+
+                </span>
+
+                <span class="nav-text">
+
+                    المشتريات
+
+                </span>
+
+            </a>
+
+
+
+            <!-- -----------------------------------------
+                 08 - SUPPLIERS
+            ------------------------------------------ -->
+
+            <a href="suppliers.html"
+               class="nav-item"
+               data-page="suppliers">
+
+                <span class="nav-number">
+
+                    8
+
+                </span>
+
+                <span class="nav-icon">
+
+                    🚚
+
+                </span>
+
+                <span class="nav-text">
+
+                    الموردين
+
+                </span>
+
+            </a>
+
+
+
+            <!-- -----------------------------------------
+                 09 - SALES
+            ------------------------------------------ -->
+
+            <a href="sales.html"
+               class="nav-item"
+               data-page="sales">
+
+                <span class="nav-number">
+
+                    9
+
+                </span>
+
+                <span class="nav-icon">
+
+                    💰
+
+                </span>
+
+                <span class="nav-text">
+
+                    المبيعات
+
+                </span>
+
+            </a>
+
+
+
+            <!-- -----------------------------------------
+                 10 - SALES RETURNS
+            ------------------------------------------ -->
+
+            <a href="returns.html"
+               class="nav-item"
+               data-page="returns">
+
+                <span class="nav-number">
+
+                    10
+
+                </span>
+
+                <span class="nav-icon">
+
+                    ↩️
+
+                </span>
+
+                <span class="nav-text">
+
+                    مرتجعات المبيعات
+
+                </span>
+
+            </a>
+
+
+
+            <!-- -----------------------------------------
+                 11 - CUSTOMERS
+            ------------------------------------------ -->
+
+            <a href="customers.html"
+               class="nav-item"
+               data-page="customers">
+
+                <span class="nav-number">
+
+                    11
+
+                </span>
+
+                <span class="nav-icon">
+
+                    👥
+
+                </span>
+
+                <span class="nav-text">
+
+                    العملاء
+
+                </span>
+
+            </a>
+
+
+
+            <!-- -----------------------------------------
+                 12 - ORDERS
+            ------------------------------------------ -->
+
+            <a href="orders.html"
+               class="nav-item"
+               data-page="orders">
+
+                <span class="nav-number">
+
+                    12
+
+                </span>
+
+                <span class="nav-icon">
+
+                    📝
+
+                </span>
+
+                <span class="nav-text">
+
+                    الطلبات (التوصيل)
+
+                </span>
+
+            </a>
+
+
+
+            <!-- -----------------------------------------
+                 13 - DELIVERY
+            ------------------------------------------ -->
+
+            <a href="delivery.html"
+               class="nav-item"
+               data-page="delivery">
+
+                <span class="nav-number">
+
+                    13
+
+                </span>
+
+                <span class="nav-icon">
+
+                    📍
+
+                </span>
+
+                <span class="nav-text">
+
+                    تتبع التوصيل
+
+                </span>
+
+            </a>
+
+
+
+            <!-- -----------------------------------------
+                 14 - DELIVERY STAFF
+            ------------------------------------------ -->
+
+            <a href="delivery.html"
+               class="nav-item"
+               data-page="delivery-staff">
+
+                <span class="nav-number">
+
+                    14
+
+                </span>
+
+                <span class="nav-icon">
+
+                    🛵
+
+                </span>
+
+                <span class="nav-text">
+
+                    المندوبين
+
+                </span>
+
+            </a>
+
+
+
+            <!-- -----------------------------------------
+                 15 - BRANCHES
+            ------------------------------------------ -->
+
+            <a href="branches.html"
+               class="nav-item"
+               data-page="branches">
+
+                <span class="nav-number">
+
+                    15
+
+                </span>
+
+                <span class="nav-icon">
+
+                    🏪
+
+                </span>
+
+                <span class="nav-text">
+
+                    الفروع
+
+                </span>
+
+            </a>
+
+
+
+            <!-- -----------------------------------------
+                 16 - EMPLOYEES
+            ------------------------------------------ -->
+
+            <a href="employees.html"
+               class="nav-item"
+               data-page="employees">
+
+                <span class="nav-number">
+
+                    16
+
+                </span>
+
+                <span class="nav-icon">
+
+                    👨‍💼
+
+                </span>
+
+                <span class="nav-text">
+
+                    الموظفين
+
+                </span>
+
+            </a>
+
+
+
+            <!-- -----------------------------------------
+                 17 - ROLES & PERMISSIONS
+            ------------------------------------------ -->
+
+            <a href="employees.html#permissions"
+               class="nav-item"
+               data-page="permissions">
+
+                <span class="nav-number">
+
+                    17
+
+                </span>
+
+                <span class="nav-icon">
+
+                    🛡️
+
+                </span>
+
+                <span class="nav-text">
+
+                    الصلاحيات والأدوار
+
+                </span>
+
+            </a>
+
+
+
+            <!-- -----------------------------------------
+                 18 - EXPENSES
+            ------------------------------------------ -->
+
+            <a href="expenses.html"
+               class="nav-item"
+               data-page="expenses">
+
+                <span class="nav-number">
+
+                    18
+
+                </span>
+
+                <span class="nav-icon">
+
+                    💸
+
+                </span>
+
+                <span class="nav-text">
+
+                    المصروفات
+
+                </span>
+
+            </a>
+
+
+
+            <!-- -----------------------------------------
+                 19 - REPORTS
+            ------------------------------------------ -->
+
+            <a href="reports.html"
+               class="nav-item"
+               data-page="reports">
+
+                <span class="nav-number">
+
+                    19
+
+                </span>
+
+                <span class="nav-icon">
+
+                    📈
+
+                </span>
+
+                <span class="nav-text">
+
+                    التقارير والمبيعات
+
+                </span>
+
+            </a>
+
+
+
+            <!-- -----------------------------------------
+                 20 - ACCOUNTING
+            ------------------------------------------ -->
+
+            <a href="accounting.html"
+               class="nav-item"
+               data-page="accounting">
+
+                <span class="nav-number">
+
+                    20
+
+                </span>
+
+                <span class="nav-icon">
+
+                    🧮
+
+                </span>
+
+                <span class="nav-text">
+
+                    المحاسبة والأرباح
+
+                </span>
+
+            </a>
+
+
+
+            <!-- -----------------------------------------
+                 21 - SETTINGS
+            ------------------------------------------ -->
+
+            <a href="settings.html"
+               class="nav-item"
+               data-page="settings">
+
+                <span class="nav-number">
+
+                    21
+
+                </span>
+
+                <span class="nav-icon">
+
+                    ⚙️
+
+                </span>
+
+                <span class="nav-text">
+
+                    الإعدادات
+
+                </span>
+
+            </a>
+
+
+
+            <!-- -----------------------------------------
+                 22 - AUDIT LOG
+            ------------------------------------------ -->
+
+            <a href="audit-log.html"
+               class="nav-item"
+               data-page="audit-log">
+
+                <span class="nav-number">
+
+                    22
+
+                </span>
+
+                <span class="nav-icon">
+
+                    📋
+
+                </span>
+
+                <span class="nav-text">
+
+                    سجل العمليات (Log)
+
+                </span>
+
+            </a>
+
+
+        </nav>
+
+
+
+        <!-- =============================================
+             SIDEBAR FOOTER
+        ============================================== -->
+
+        <div class="sidebar-footer">
+
+
+            <div class="role-title">
+
+                الصلاحيات
+
+            </div>
+
+
+            <div class="role-list">
+
+
+                <div class="role-item">
+
+                    <span class="role-color role-admin"></span>
+
+                    <span>
+
+                        مدير عام
+
+                    </span>
+
+                </div>
+
+
+                <div class="role-item">
+
+                    <span class="role-color role-manager"></span>
+
+                    <span>
+
+                        مدير فرع
+
+                    </span>
+
+                </div>
+
+
+                <div class="role-item">
+
+                    <span class="role-color role-cashier"></span>
+
+                    <span>
+
+                        موظف / كاشير
+
+                    </span>
+
+                </div>
+
+
+                <div class="role-item">
+
+                    <span class="role-color role-delivery"></span>
+
+                    <span>
+
+                        مندوب توصيل
+
+                    </span>
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+
+    </aside>
+
+
+
+    <!-- =================================================
+         MAIN AREA
+    ================================================== -->
+
+    <main id="main-content"
+          class="main-content">
+
+
+        <!-- =============================================
+             TOP HEADER
+        ============================================== -->
+
+        <header class="dashboard-header">
+
+
+            <!-- MOBILE MENU -->
+
+            <button type="button"
+                    id="mobile-menu-button"
+                    class="mobile-menu-button"
+                    aria-label="فتح القائمة">
+
+                ☰
+
+            </button>
+
+
+
+            <!-- PAGE TITLE -->
+
+            <div class="header-title">
+
+
+                <span class="header-small-title">
+
+                    نظام إدارة سوبر ماركت بن سليمان
+
+                </span>
+
+
+                <h2>
+
+                    لوحة التحكم
+
+                </h2>
+
+
+            </div>
+
+
+
+            <!-- HEADER ACTIONS -->
+
+            <div class="header-actions">
+
+
+                <!-- SEARCH -->
+
+                <div class="header-search">
+
+                    <span>
+
+                        🔍
+
+                    </span>
+
+                    <input type="search"
+                           id="global-search"
+                           placeholder="بحث في النظام..."
+                           autocomplete="off">
+
+                </div>
+
+
+
+                <!-- NOTIFICATIONS -->
+
+                <button type="button"
+                        class="header-action-button"
+                        id="notifications-button"
+                        aria-label="الإشعارات">
+
+                    🔔
+
+                    <span class="notification-badge">
+
+                        3
+
+                    </span>
+
+                </button>
+
+
+
+                <!-- USER -->
+
+                <div class="header-user"
+                     id="header-user">
+
+
+                    <div class="user-avatar"
+                         id="user-avatar">
+
+                        أ
+
+                    </div>
+
+
+                    <div class="user-info">
+
+                        <strong id="user-name">
+
+                            أحمد محمد
+
+                        </strong>
+
+                        <span id="user-role">
+
+                            مدير عام
+
+                        </span>
+
+                    </div>
+
+
+                    <button type="button"
+                            class="user-menu-button"
+                            id="user-menu-button"
+                            aria-label="قائمة المستخدم">
+
+                        ▾
+
+                    </button>
+
+
+                </div>
+
+
+            </div>
+
+
+        </header>
+
+
+
+        <!-- =================================================
+             DASHBOARD CONTENT
+             المرحلة 2 ستبدأ من هنا
+        ================================================== -->
+
+        <section id="dashboard-content"
+                 class="dashboard-content">
+
+          <!-- =====================================================
+     DASHBOARD OVERVIEW
+====================================================== -->
+
+<div class="dashboard-page-header">
+
+    <div>
+
+        <h1>
+            لوحة التحكم الرئيسية
+        </h1>
+
+        <p>
+            نظرة عامة على أداء السوبر ماركت والمبيعات والمخزون
+        </p>
+
+    </div>
+
+
+    <div class="dashboard-date">
+
+        <span class="date-icon">
+            📅
+        </span>
+
+        <div>
+
+            <small>
+                تاريخ اليوم
+            </small>
+
+            <strong id="current-date">
+                01/06/2024
+            </strong>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     QUICK STATISTICS
+====================================================== -->
+
+<div class="stats-grid">
+
+
+    <!-- إجمالي المبيعات -->
+
+    <article class="stat-card stat-sales">
+
+        <div class="stat-card-icon">
+            💰
+        </div>
+
+        <div class="stat-card-content">
+
+            <span class="stat-label">
+                إجمالي المبيعات
+            </span>
+
+            <strong class="stat-value"
+                    id="total-sales">
+                125,850.00
+            </strong>
+
+            <span class="stat-currency">
+                جنيه مصري
+            </span>
+
+            <div class="stat-change positive">
+
+                <span>
+                    ↑ 12.5%
+                </span>
+
+                <small>
+                    مقارنة بالشهر السابق
+                </small>
+
+            </div>
+
+        </div>
+
+    </article>
+
+
+
+    <!-- إجمالي الأرباح -->
+
+    <article class="stat-card stat-profit">
+
+        <div class="stat-card-icon">
+            📈
+        </div>
+
+        <div class="stat-card-content">
+
+            <span class="stat-label">
+                إجمالي الأرباح
+            </span>
+
+            <strong class="stat-value"
+                    id="total-profit">
+                28,540.75
+            </strong>
+
+            <span class="stat-currency">
+                جنيه مصري
+            </span>
+
+            <div class="stat-change positive">
+
+                <span>
+                    ↑ 8.3%
+                </span>
+
+                <small>
+                    مقارنة بالشهر السابق
+                </small>
+
+            </div>
+
+        </div>
+
+    </article>
+
+
+
+    <!-- عدد الفواتير -->
+
+    <article class="stat-card stat-invoices">
+
+        <div class="stat-card-icon">
+            🧾
+        </div>
+
+        <div class="stat-card-content">
+
+            <span class="stat-label">
+                عدد الفواتير
+            </span>
+
+            <strong class="stat-value"
+                    id="total-invoices">
+                320
+            </strong>
+
+            <span class="stat-currency">
+                فاتورة
+            </span>
+
+            <div class="stat-change positive">
+
+                <span>
+                    ↑ 15.2%
+                </span>
+
+                <small>
+                    مقارنة بالشهر السابق
+                </small>
+
+            </div>
+
+        </div>
+
+    </article>
+
+
+
+    <!-- طلبات التوصيل -->
+
+    <article class="stat-card stat-orders">
+
+        <div class="stat-card-icon">
+            🛵
+        </div>
+
+        <div class="stat-card-content">
+
+            <span class="stat-label">
+                طلبات التوصيل
+            </span>
+
+            <strong class="stat-value"
+                    id="total-orders">
+                18
+            </strong>
+
+            <span class="stat-currency">
+                طلب
+            </span>
+
+            <div class="stat-change positive">
+
+                <span>
+                    ↑ 6.7%
+                </span>
+
+                <small>
+                    مقارنة بالأمس
+                </small>
+
+            </div>
+
+        </div>
+
+    </article>
+
+</div>
+
+
+
+<!-- =====================================================
+     MAIN DASHBOARD GRID
+====================================================== -->
+
+<div class="dashboard-grid">
+
+
+    <!-- =================================================
+         SALES BY CATEGORY
+    ================================================== -->
+
+    <section class="dashboard-card sales-categories-card">
+
+        <div class="card-header">
+
+            <div>
+
+                <h3>
+                    المبيعات حسب الأقسام
+                </h3>
+
+                <span>
+                    توزيع المبيعات اليوم
+                </span>
+
+            </div>
+
+
+            <button type="button"
+                    class="card-menu-button"
+                    aria-label="المزيد">
+
+                ⋮
+
+            </button>
+
+        </div>
+
+
+        <div class="category-sales">
+
+            <!-- القسم الأول -->
+
+            <div class="category-row">
+
+                <div class="category-info">
+
+                    <span class="category-dot category-one"></span>
+
+                    <span>
+                        الفرع الرئيسي
+                    </span>
+
+                </div>
+
+                <strong>
+                    68,450.00
+                </strong>
+
+                <span class="category-percent">
+                    54%
+                </span>
+
+            </div>
+
+
+            <div class="category-progress">
+
+                <span style="width:54%;"></span>
+
+            </div>
+
+
+            <!-- القسم الثاني -->
+
+            <div class="category-row">
+
+                <div class="category-info">
+
+                    <span class="category-dot category-two"></span>
+
+                    <span>
+                        فرع الجيزة
+                    </span>
+
+                </div>
+
+                <strong>
+                    42,750.00
+                </strong>
+
+                <span class="category-percent">
+                    34%
+                </span>
+
+            </div>
+
+
+            <div class="category-progress">
+
+                <span style="width:34%;"></span>
+
+            </div>
+
+
+            <!-- القسم الثالث -->
+
+            <div class="category-row">
+
+                <div class="category-info">
+
+                    <span class="category-dot category-three"></span>
+
+                    <span>
+                        فرع مدينة نصر
+                    </span>
+
+                </div>
+
+                <strong>
+                    14,650.00
+                </strong>
+
+                <span class="category-percent">
+                    12%
+                </span>
+
+            </div>
+
+
+            <div class="category-progress">
+
+                <span style="width:12%;"></span>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =================================================
+         SALES CHART
+    ================================================== -->
+
+    <section class="dashboard-card sales-chart-card">
+
+        <div class="card-header">
+
+            <div>
+
+                <h3>
+                    المبيعات آخر 7 أيام
+                </h3>
+
+                <span>
+                    أداء المبيعات اليومية
+                </span>
+
+            </div>
+
+
+            <select id="sales-chart-period"
+                    class="card-select">
+
+                <option value="7">
+                    آخر 7 أيام
+                </option>
+
+                <option value="30">
+                    آخر 30 يوم
+                </option>
+
+                <option value="90">
+                    آخر 3 أشهر
+                </option>
+
+            </select>
+
+        </div>
+
+
+        <div class="chart-wrapper">
+
+            <div class="chart-y-axis">
+
+                <span>
+                    80K
+                </span>
+
+                <span>
+                    60K
+                </span>
+
+                <span>
+                    40K
+                </span>
+
+                <span>
+                    20K
+                </span>
+
+                <span>
+                    0
+                </span>
+
+            </div>
+
+
+            <div class="sales-chart"
+                 id="sales-chart">
+
+                <div class="chart-grid-lines">
+
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+
+                </div>
+
+
+                <div class="chart-line">
+
+                    <span class="chart-point point-1"></span>
+
+                    <span class="chart-point point-2"></span>
+
+                    <span class="chart-point point-3"></span>
+
+                    <span class="chart-point point-4"></span>
+
+                    <span class="chart-point point-5"></span>
+
+                    <span class="chart-point point-6"></span>
+
+                    <span class="chart-point point-7"></span>
+
+                </div>
+
+
+                <div class="chart-days">
+
+                    <span>
+                        26/05
+                    </span>
+
+                    <span>
+                        27/05
+                    </span>
+
+                    <span>
+                        28/05
+                    </span>
+
+                    <span>
+                        29/05
+                    </span>
+
+                    <span>
+                        30/05
+                    </span>
+
+                    <span>
+                        31/05
+                    </span>
+
+                    <span>
+                        01/06
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =================================================
+         QUICK POS ACTIONS
+    ================================================== -->
+
+    <section class="dashboard-card quick-actions-card">
+
+        <div class="card-header">
+
+            <div>
+
+                <h3>
+                    إجراءات سريعة
+                </h3>
+
+                <span>
+                    الوصول السريع للعمليات
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <div class="quick-actions">
+
+
+            <a href="pos.html"
+               class="quick-action action-green">
+
+                <span class="quick-action-icon">
+                    🛒
+                </span>
+
+                <span>
+                    نقطة البيع
+                </span>
+
+            </a>
+
+
+            <a href="products.html"
+               class="quick-action action-blue">
+
+                <span class="quick-action-icon">
+                    📦
+                </span>
+
+                <span>
+                    المنتجات
+                </span>
+
+            </a>
+
+
+            <a href="purchases.html"
+               class="quick-action action-orange">
+
+                <span class="quick-action-icon">
+                    🛍️
+                </span>
+
+                <span>
+                    المشتريات
+                </span>
+
+            </a>
+
+
+            <a href="suppliers.html"
+               class="quick-action action-purple">
+
+                <span class="quick-action-icon">
+                    🚚
+                </span>
+
+                <span>
+                    الموردين
+                </span>
+
+            </a>
+
+
+            <a href="reports.html"
+               class="quick-action action-cyan">
+
+                <span class="quick-action-icon">
+                    📊
+                </span>
+
+                <span>
+                    التقارير
+                </span>
+
+            </a>
+
+
+            <a href="expenses.html"
+               class="quick-action action-red">
+
+                <span class="quick-action-icon">
+                    💸
+                </span>
+
+                <span>
+                    المصروفات
+                </span>
+
+            </a>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =================================================
+         TOP SELLING PRODUCTS
+    ================================================== -->
+
+    <section class="dashboard-card top-products-card">
+
+        <div class="card-header">
+
+            <div>
+
+                <h3>
+                    المنتجات الأكثر مبيعًا
+                </h3>
+
+                <span>
+                    حسب كمية المبيعات
+                </span>
+
+            </div>
+
+
+            <a href="products.html"
+               class="view-all-link">
+
+                عرض الكل
+
+            </a>
+
+        </div>
+
+
+        <div class="products-list">
+
+
+            <!-- PRODUCT 1 -->
+
+            <div class="top-product">
+
+                <div class="product-rank">
+                    1
+                </div>
+
+                <div class="product-image">
+                    🥫
+                </div>
+
+                <div class="product-details">
+
+                    <strong>
+                        جبنة دومتي 1 كجم
+                    </strong>
+
+                    <span>
+                        ألبان ومنتجاتها
+                    </span>
+
+                </div>
+
+                <div class="product-sales">
+
+                    <strong>
+                        45
+                    </strong>
+
+                    <span>
+                        مبيعات
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <!-- PRODUCT 2 -->
+
+            <div class="top-product">
+
+                <div class="product-rank">
+                    2
+                </div>
+
+                <div class="product-image">
+                    🥛
+                </div>
+
+                <div class="product-details">
+
+                    <strong>
+                        كوكولا 330 مل
+                    </strong>
+
+                    <span>
+                        مشروبات
+                    </span>
+
+                </div>
+
+                <div class="product-sales">
+
+                    <strong>
+                        32
+                    </strong>
+
+                    <span>
+                        مبيعات
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <!-- PRODUCT 3 -->
+
+            <div class="top-product">
+
+                <div class="product-rank">
+                    3
+                </div>
+
+                <div class="product-image">
+                    🧃
+                </div>
+
+                <div class="product-details">
+
+                    <strong>
+                        نسكافيه 3 في 1
+                    </strong>
+
+                    <span>
+                        مشروبات ساخنة
+                    </span>
+
+                </div>
+
+                <div class="product-sales">
+
+                    <strong>
+                        28
+                    </strong>
+
+                    <span>
+                        مبيعات
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <!-- PRODUCT 4 -->
+
+            <div class="top-product">
+
+                <div class="product-rank">
+                    4
+                </div>
+
+                <div class="product-image">
+                    🍾
+                </div>
+
+                <div class="product-details">
+
+                    <strong>
+                        كولا 330 مل
+                    </strong>
+
+                    <span>
+                        مشروبات
+                    </span>
+
+                </div>
+
+                <div class="product-sales">
+
+                    <strong>
+                        16
+                    </strong>
+
+                    <span>
+                        مبيعات
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <!-- PRODUCT 5 -->
+
+            <div class="top-product">
+
+                <div class="product-rank">
+                    5
+                </div>
+
+                <div class="product-image">
+                    🚬
+                </div>
+
+                <div class="product-details">
+
+                    <strong>
+                        Marlboro Red
+                    </strong>
+
+                    <span>
+                        منتجات متنوعة
+                    </span>
+
+                </div>
+
+                <div class="product-sales">
+
+                    <strong>
+                        40
+                    </strong>
+
+                    <span>
+                        مبيعات
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =================================================
+         INVENTORY OVERVIEW
+    ================================================== -->
+
+    <section class="dashboard-card inventory-card">
+
+        <div class="card-header">
+
+            <div>
+
+                <h3>
+                    إدارة المخزون
+                </h3>
+
+                <span>
+                    حالة المخزون الحالية
+                </span>
+
+            </div>
+
+
+            <a href="inventory.html"
+               class="view-all-link">
+
+                إدارة المخزون
+
+            </a>
+
+        </div>
+
+
+        <div class="inventory-table-wrapper">
+
+            <table class="dashboard-table">
+
+                <thead>
+
+                    <tr>
+
+                        <th>
+                            المنتج
+                        </th>
+
+                        <th>
+                            المخزون
+                        </th>
+
+                        <th>
+                            الحد الأدنى
+                        </th>
+
+                        <th>
+                            الحالة
+                        </th>
+
+                    </tr>
+
+                </thead>
+
+
+                <tbody>
+
+
+                    <tr>
+
+                        <td>
+                            جبنة دومتي 1 كجم
+                        </td>
+
+                        <td>
+                            120
+                        </td>
+
+                        <td>
+                            20
+                        </td>
+
+                        <td>
+
+                            <span class="status-badge status-available">
+
+                                متوفر
+
+                            </span>
+
+                        </td>
+
+                    </tr>
+
+
+                    <tr>
+
+                        <td>
+                            جبنة دومتي 500 جم
+                        </td>
+
+                        <td>
+                            80
+                        </td>
+
+                        <td>
+                            20
+                        </td>
+
+                        <td>
+
+                            <span class="status-badge status-available">
+
+                                متوفر
+
+                            </span>
+
+                        </td>
+
+                    </tr>
+
+
+                    <tr>
+
+                        <td>
+                            كوكولا 330 مل
+                        </td>
+
+                        <td>
+                            150
+                        </td>
+
+                        <td>
+                            30
+                        </td>
+
+                        <td>
+
+                            <span class="status-badge status-available">
+
+                                متوفر
+
+                            </span>
+
+                        </td>
+
+                    </tr>
+
+
+                    <tr>
+
+                        <td>
+                            نسكافيه 3 في 1
+                        </td>
+
+                        <td>
+                            60
+                        </td>
+
+                        <td>
+                            30
+                        </td>
+
+                        <td>
+
+                            <span class="status-badge status-warning">
+
+                                منخفض
+
+                            </span>
+
+                        </td>
+
+                    </tr>
+
+
+                    <tr>
+
+                        <td>
+                            Marlboro Red
+                        </td>
+
+                        <td>
+                            200
+                        </td>
+
+                        <td>
+                            50
+                        </td>
+
+                        <td>
+
+                            <span class="status-badge status-available">
+
+                                متوفر
+
+                            </span>
+
+                        </td>
+
+                    </tr>
+
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </section>
+
+</div>
+
+
+<!-- =====================================================
+     DASHBOARD ALERTS
+====================================================== -->
+
+<section class="dashboard-card alerts-card">
+
+    <div class="card-header">
+
+        <div>
+
+            <h3>
+                التنبيهات
+            </h3>
+
+            <span>
+                آخر التنبيهات المهمة في النظام
+            </span>
+
+        </div>
+
+    </div>
+
+
+    <div class="alerts-list">
+
+
+        <div class="alert-item alert-warning">
+
+            <span class="alert-icon">
+                ⚠️
+            </span>
+
+            <div>
+
+                <strong>
+                    مخزون منخفض
+                </strong>
+
+                <p>
+                    يوجد 4 منتجات وصلت إلى الحد الأدنى للمخزون.
+                </p>
+
+            </div>
+
+            <a href="inventory.html">
+                مراجعة
+            </a>
+
+        </div>
+
+
+
+        <div class="alert-item alert-info">
+
+            <span class="alert-icon">
+                📦
+            </span>
+
+            <div>
+
+                <strong>
+                    طلبات توصيل جديدة
+                </strong>
+
+                <p>
+                    يوجد 18 طلب توصيل بحاجة إلى المتابعة.
+                </p>
+
+            </div>
+
+            <a href="orders.html">
+                عرض الطلبات
+            </a>
+
+        </div>
+
+
+
+        <div class="alert-item alert-success">
+
+            <span class="alert-icon">
+                💰
+            </span>
+
+            <div>
+
+                <strong>
+                    أداء المبيعات
+                </strong>
+
+                <p>
+                    ارتفعت المبيعات بنسبة 12.5% مقارنة بالفترة السابقة.
+                </p>
+
+            </div>
+
+            <a href="reports.html">
+                التقرير
+            </a>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     RECENT SALES
+====================================================== -->
+
+<section class="dashboard-card recent-sales-card">
+
+    <div class="card-header">
+
+        <div>
+
+            <h3>
+                آخر المبيعات
+            </h3>
+
+            <span>
+                أحدث عمليات البيع المسجلة
+            </span>
+
+        </div>
+
+
+        <a href="sales.html"
+           class="view-all-link">
+
+            عرض جميع المبيعات
+
+        </a>
+
+    </div>
+
+
+    <div class="table-responsive">
+
+        <table class="dashboard-table recent-sales-table">
+
+            <thead>
+
+                <tr>
+
+                    <th>
+                        رقم الفاتورة
+                    </th>
+
+                    <th>
+                        العميل
+                    </th>
+
+                    <th>
+                        الكاشير
+                    </th>
+
+                    <th>
+                        الفرع
+                    </th>
+
+                    <th>
+                        الإجمالي
+                    </th>
+
+                    <th>
+                        طريقة الدفع
+                    </th>
+
+                    <th>
+                        الحالة
+                    </th>
+
+                </tr>
+
+            </thead>
+
+
+            <tbody>
+
+
+                <tr>
+
+                    <td>
+                        #S10082
+                    </td>
+
+                    <td>
+                        أحمد محمود
+                    </td>
+
+                    <td>
+                        محمد علي
+                    </td>
+
+                    <td>
+                        الفرع الرئيسي
+                    </td>
+
+                    <td>
+                        235.00 ج.م
+                    </td>
+
+                    <td>
+                        نقدي
+                    </td>
+
+                    <td>
+
+                        <span class="status-badge status-paid">
+                            مكتملة
+                        </span>
+
+                    </td>
+
+                </tr>
+
+
+                <tr>
+
+                    <td>
+                        #S10081
+                    </td>
+
+                    <td>
+                        محمد حسن
+                    </td>
+
+                    <td>
+                        أحمد علي
+                    </td>
+
+                    <td>
+                        فرع الجيزة
+                    </td>
+
+                    <td>
+                        320.00 ج.م
+                    </td>
+
+                    <td>
+                        بطاقة
+                    </td>
+
+                    <td>
+
+                        <span class="status-badge status-paid">
+                            مكتملة
+                        </span>
+
+                    </td>
+
+                </tr>
+
+
+                <tr>
+
+                    <td>
+                        #S10080
+                    </td>
+
+                    <td>
+                        مؤسسة الرحمة
+                    </td>
+
+                    <td>
+                        محمد علي
+                    </td>
+
+                    <td>
+                        الفرع الرئيسي
+                    </td>
+
+                    <td>
+                        1,000.00 ج.م
+                    </td>
+
+                    <td>
+                        تحويل
+                    </td>
+
+                    <td>
+
+                        <span class="status-badge status-paid">
+                            مكتملة
+                        </span>
+
+                    </td>
+
+                </tr>
+
+
+                <tr>
+
+                    <td>
+                        #S10079
+                    </td>
+
+                    <td>
+                        سامي محمود
+                    </td>
+
+                    <td>
+                        أحمد حسن
+                    </td>
+
+                    <td>
+                        فرع مدينة نصر
+                    </td>
+
+                    <td>
+                        145.00 ج.م
+                    </td>
+
+                    <td>
+                        نقدي
+                    </td>
+
+                    <td>
+
+                        <span class="status-badge status-paid">
+                            مكتملة
+                        </span>
+
+                    </td>
+
+                </tr>
+
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+</section>
+
+          <!-- =====================================================
+     BUSINESS OPERATIONS GRID
+====================================================== -->
+
+<div class="operations-grid">
+
+
+    <!-- =================================================
+         PURCHASES
+    ================================================== -->
+
+    <section class="dashboard-card operation-card purchases-card">
+
+        <div class="card-header">
+
+            <div>
+
+                <h3>
+                    المشتريات
+                </h3>
+
+                <span>
+                    آخر عمليات الشراء
+                </span>
+
+            </div>
+
+            <a href="purchases.html"
+               class="card-action">
+
+                + إضافة شراء
+
+            </a>
+
+        </div>
+
+
+        <div class="mini-table-wrapper">
+
+            <table class="mini-table">
+
+                <thead>
+
+                    <tr>
+
+                        <th>
+                            رقم الفاتورة
+                        </th>
+
+                        <th>
+                            المورد
+                        </th>
+
+                        <th>
+                            الإجمالي
+                        </th>
+
+                        <th>
+                            الحالة
+                        </th>
+
+                    </tr>
+
+                </thead>
+
+
+                <tbody>
+
+                    <tr>
+
+                        <td>
+                            #P10045
+                        </td>
+
+                        <td>
+                            شركة المسير
+                        </td>
+
+                        <td>
+                            5,250.00
+                        </td>
+
+                        <td>
+                            <span class="status-badge status-paid">
+                                مكتملة
+                            </span>
+                        </td>
+
+                    </tr>
+
+
+                    <tr>
+
+                        <td>
+                            #P10044
+                        </td>
+
+                        <td>
+                            الوسيط للتجارة
+                        </td>
+
+                        <td>
+                            3,800.00
+                        </td>
+
+                        <td>
+                            <span class="status-badge status-paid">
+                                مكتملة
+                            </span>
+                        </td>
+
+                    </tr>
+
+
+                    <tr>
+
+                        <td>
+                            #P10043
+                        </td>
+
+                        <td>
+                            شركة النور
+                        </td>
+
+                        <td>
+                            7,650.00
+                        </td>
+
+                        <td>
+                            <span class="status-badge status-paid">
+                                مكتملة
+                            </span>
+                        </td>
+
+                    </tr>
+
+
+                    <tr>
+
+                        <td>
+                            #P10042
+                        </td>
+
+                        <td>
+                            مورد الألبان
+                        </td>
+
+                        <td>
+                            2,300.00
+                        </td>
+
+                        <td>
+                            <span class="status-badge status-warning">
+                                قيد المراجعة
+                            </span>
+                        </td>
+
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =================================================
+         SUPPLIERS
+    ================================================== -->
+
+    <section class="dashboard-card operation-card suppliers-card">
+
+        <div class="card-header">
+
+            <div>
+
+                <h3>
+                    الموردين
+                </h3>
+
+                <span>
+                    الموردون وأرصدة الحسابات
+                </span>
+
+            </div>
+
+            <a href="suppliers.html"
+               class="card-action">
+
+                + مورد جديد
+
+            </a>
+
+        </div>
+
+
+        <div class="mini-table-wrapper">
+
+            <table class="mini-table">
+
+                <thead>
+
+                    <tr>
+
+                        <th>
+                            المورد
+                        </th>
+
+                        <th>
+                            الهاتف
+                        </th>
+
+                        <th>
+                            الرصيد
+                        </th>
+
+                    </tr>
+
+                </thead>
+
+
+                <tbody>
+
+                    <tr>
+
+                        <td>
+                            شركة المسير
+                        </td>
+
+                        <td>
+                            01012345678
+                        </td>
+
+                        <td>
+                            0.00
+                        </td>
+
+                    </tr>
+
+
+                    <tr>
+
+                        <td>
+                            الوسيط للتجارة
+                        </td>
+
+                        <td>
+                            01098765432
+                        </td>
+
+                        <td class="amount-danger">
+                            1,250.00
+                        </td>
+
+                    </tr>
+
+
+                    <tr>
+
+                        <td>
+                            شركة النور
+                        </td>
+
+                        <td>
+                            01122334455
+                        </td>
+
+                        <td>
+                            0.00
+                        </td>
+
+                    </tr>
+
+
+                    <tr>
+
+                        <td>
+                            مورد الألبان
+                        </td>
+
+                        <td>
+                            01055667788
+                        </td>
+
+                        <td class="amount-danger">
+                            750.00
+                        </td>
+
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =================================================
+         SALES RETURNS
+    ================================================== -->
+
+    <section class="dashboard-card operation-card returns-card">
+
+        <div class="card-header">
+
+            <div>
+
+                <h3>
+                    مرتجعات المبيعات
+                </h3>
+
+                <span>
+                    أحدث المرتجعات
+                </span>
+
+            </div>
+
+            <a href="returns.html"
+               class="card-action">
+
+                عرض الكل
+
+            </a>
+
+        </div>
+
+
+        <div class="returns-summary">
+
+
+            <div class="summary-number">
+
+                <strong>
+                    12
+                </strong>
+
+                <span>
+                    عملية مرتجع
+                </span>
+
+            </div>
+
+
+            <div class="summary-number">
+
+                <strong>
+                    1,850.00
+                </strong>
+
+                <span>
+                    إجمالي المرتجعات
+                </span>
+
+            </div>
+
+
+        </div>
+
+
+        <div class="mini-table-wrapper">
+
+            <table class="mini-table">
+
+                <thead>
+
+                    <tr>
+
+                        <th>
+                            رقم المرتجع
+                        </th>
+
+                        <th>
+                            التاريخ
+                        </th>
+
+                        <th>
+                            القيمة
+                        </th>
+
+                    </tr>
+
+                </thead>
+
+
+                <tbody>
+
+                    <tr>
+
+                        <td>
+                            #R1005
+                        </td>
+
+                        <td>
+                            01/06/2024
+                        </td>
+
+                        <td>
+                            15.00
+                        </td>
+
+                    </tr>
+
+
+                    <tr>
+
+                        <td>
+                            #R1004
+                        </td>
+
+                        <td>
+                            31/05/2024
+                        </td>
+
+                        <td>
+                            20.00
+                        </td>
+
+                    </tr>
+
+
+                    <tr>
+
+                        <td>
+                            #R1003
+                        </td>
+
+                        <td>
+                            30/05/2024
+                        </td>
+
+                        <td>
+                            10.00
+                        </td>
+
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =================================================
+         CUSTOMERS
+    ================================================== -->
+
+    <section class="dashboard-card operation-card customers-card">
+
+        <div class="card-header">
+
+            <div>
+
+                <h3>
+                    العملاء
+                </h3>
+
+                <span>
+                    العملاء وأرصدة الحسابات
+                </span>
+
+            </div>
+
+            <a href="customers.html"
+               class="card-action">
+
+                + عميل جديد
+
+            </a>
+
+        </div>
+
+
+        <div class="mini-table-wrapper">
+
+            <table class="mini-table">
+
+                <thead>
+
+                    <tr>
+
+                        <th>
+                            العميل
+                        </th>
+
+                        <th>
+                            الهاتف
+                        </th>
+
+                        <th>
+                            المشتريات
+                        </th>
+
+                    </tr>
+
+                </thead>
+
+
+                <tbody>
+
+                    <tr>
+
+                        <td>
+                            أحمد محمود
+                        </td>
+
+                        <td>
+                            01012345678
+                        </td>
+
+                        <td>
+                            5,450.00
+                        </td>
+
+                    </tr>
+
+
+                    <tr>
+
+                        <td>
+                            محمد علي
+                        </td>
+
+                        <td>
+                            01098765432
+                        </td>
+
+                        <td>
+                            3,200.00
+                        </td>
+
+                    </tr>
+
+
+                    <tr>
+
+                        <td>
+                            مؤسسة الرحمة
+                        </td>
+
+                        <td>
+                            01122334455
+                        </td>
+
+                        <td>
+                            12,800.00
+                        </td>
+
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =================================================
+         DELIVERY ORDERS
+    ================================================== -->
+
+    <section class="dashboard-card operation-card orders-card">
+
+        <div class="card-header">
+
+            <div>
+
+                <h3>
+                    الطلبات (التوصيل)
+                </h3>
+
+                <span>
+                    أحدث طلبات التوصيل
+                </span>
+
+            </div>
+
+            <a href="orders.html"
+               class="card-action">
+
+                عرض الطلبات
+
+            </a>
+
+        </div>
+
+
+        <div class="order-status-summary">
+
+
+            <div class="order-status">
+
+                <span class="order-status-icon pending">
+                    🕐
+                </span>
+
+                <strong>
+                    4
+                </strong>
+
+                <span>
+                    قيد الانتظار
+                </span>
+
+            </div>
+
+
+            <div class="order-status">
+
+                <span class="order-status-icon processing">
+                    📦
+                </span>
+
+                <strong>
+                    6
+                </strong>
+
+                <span>
+                    قيد التجهيز
+                </span>
+
+            </div>
+
+
+            <div class="order-status">
+
+                <span class="order-status-icon delivery">
+                    🛵
+                </span>
+
+                <strong>
+                    5
+                </strong>
+
+                <span>
+                    في الطريق
+                </span>
+
+            </div>
+
+
+            <div class="order-status">
+
+                <span class="order-status-icon completed">
+                    ✓
+                </span>
+
+                <strong>
+                    3
+                </strong>
+
+                <span>
+                    تم التسليم
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <div class="mini-table-wrapper">
+
+            <table class="mini-table">
+
+                <thead>
+
+                    <tr>
+
+                        <th>
+                            الطلب
+                        </th>
+
+                        <th>
+                            الفرع
+                        </th>
+
+                        <th>
+                            الإجمالي
+                        </th>
+
+                        <th>
+                            الحالة
+                        </th>
+
+                    </tr>
+
+                </thead>
+
+
+                <tbody>
+
+                    <tr>
+
+                        <td>
+                            #D10018
+                        </td>
+
+                        <td>
+                            الفرع الرئيسي
+                        </td>
+
+                        <td>
+                            235.00
+                        </td>
+
+                        <td>
+                            <span class="status-badge status-processing">
+                                تجهيز
+                            </span>
+                        </td>
+
+                    </tr>
+
+
+                    <tr>
+
+                        <td>
+                            #D10017
+                        </td>
+
+                        <td>
+                            فرع الجيزة
+                        </td>
+
+                        <td>
+                            120.00
+                        </td>
+
+                        <td>
+                            <span class="status-badge status-warning">
+                                قيد التوصيل
+                            </span>
+                        </td>
+
+                    </tr>
+
+
+                    <tr>
+
+                        <td>
+                            #D10016
+                        </td>
+
+                        <td>
+                            فرع مدينة نصر
+                        </td>
+
+                        <td>
+                            310.00
+                        </td>
+
+                        <td>
+                            <span class="status-badge status-processing">
+                                في الطريق
+                            </span>
+                        </td>
+
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =================================================
+         DELIVERY TRACKING
+    ================================================== -->
+
+    <section class="dashboard-card operation-card delivery-card">
+
+        <div class="card-header">
+
+            <div>
+
+                <h3>
+                    تتبع التوصيل
+                </h3>
+
+                <span>
+                    موقع مندوب التوصيل
+                </span>
+
+            </div>
+
+            <a href="delivery.html"
+               class="card-action">
+
+                الخريطة
+
+            </a>
+
+        </div>
+
+
+        <div class="delivery-map">
+
+            <div class="map-background">
+
+                <div class="map-road road-one"></div>
+
+                <div class="map-road road-two"></div>
+
+                <div class="map-road road-three"></div>
+
+                <div class="map-point map-start">
+                    ●
+                </div>
+
+                <div class="map-point map-end">
+                    📍
+                </div>
+
+                <div class="map-route"></div>
+
+            </div>
+
+        </div>
+
+
+        <div class="delivery-details">
+
+            <div>
+
+                <span>
+                    رقم الطلب
+                </span>
+
+                <strong>
+                    #D10018
+                </strong>
+
+            </div>
+
+
+            <div>
+
+                <span>
+                    المندوب
+                </span>
+
+                <strong>
+                    محمد علي
+                </strong>
+
+            </div>
+
+
+            <div>
+
+                <span>
+                    الحالة
+                </span>
+
+                <strong class="text-success">
+                    في الطريق
+                </strong>
+
+            </div>
+
+
+            <div>
+
+                <span>
+                    الإجمالي
+                </span>
+
+                <strong>
+                    235.00 ج.م
+                </strong>
+
+            </div>
+
+        </div>
+
+
+        <div class="delivery-buttons">
+
+            <a href="delivery.html"
+               class="btn btn-primary">
+
+                تتبع الخريطة
+
+            </a>
+
+            <a href="orders.html"
+               class="btn btn-success">
+
+                تم التسليم
+
+            </a>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =================================================
+         DELIVERY STAFF
+    ================================================== -->
+
+    <section class="dashboard-card operation-card drivers-card">
+
+        <div class="card-header">
+
+            <div>
+
+                <h3>
+                    المندوبين
+                </h3>
+
+                <span>
+                    حالة مندوبي التوصيل
+                </span>
+
+            </div>
+
+            <a href="delivery.html"
+               class="card-action">
+
+                إدارة المندوبين
+
+            </a>
+
+        </div>
+
+
+        <div class="drivers-list">
+
+
+            <div class="driver-item">
+
+                <div class="driver-avatar">
+                    م
+                </div>
+
+                <div class="driver-info">
+
+                    <strong>
+                        محمد علي
+                    </strong>
+
+                    <span>
+                        الفرع الرئيسي
+                    </span>
+
+                </div>
+
+                <span class="driver-status online">
+                    متاح
+                </span>
+
+            </div>
+
+
+            <div class="driver-item">
+
+                <div class="driver-avatar">
+                    أ
+                </div>
+
+                <div class="driver-info">
+
+                    <strong>
+                        أحمد حسن
+                    </strong>
+
+                    <span>
+                        فرع الجيزة
+                    </span>
+
+                </div>
+
+                <span class="driver-status busy">
+                    في مهمة
+                </span>
+
+            </div>
+
+
+            <div class="driver-item">
+
+                <div class="driver-avatar">
+                    س
+                </div>
+
+                <div class="driver-info">
+
+                    <strong>
+                        سامي محمود
+                    </strong>
+
+                    <span>
+                        فرع مدينة نصر
+                    </span>
+
+                </div>
+
+                <span class="driver-status offline">
+                    غير متصل
+                </span>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =================================================
+         BRANCHES
+    ===========
+
+  <!-- =====================================================
+     DASHBOARD FOOTER
+====================================================== -->
+
+<footer class="dashboard-footer">
+
+    <div class="footer-right">
+
+        <strong>
+            سوبر ماركت بن سليمان
+        </strong>
+
+        <span>
+            نظام إدارة السوبر ماركت
+        </span>
+
+    </div>
+
+
+    <div class="footer-center">
+
+        جميع الحقوق محفوظة ©
+        <span id="footer-year">
+            2026
+        </span>
+
+    </div>
+
+
+    <div class="footer-left">
+
+        <span>
+            الإصدار
+        </span>
+
+        <strong>
+            1.0.0
+        </strong>
+
+    </div>
+
+</footer>
+
+
+<!-- =====================================================
+     NOTIFICATIONS PANEL
+====================================================== -->
+
+<div id="notifications-panel"
+     class="notifications-panel"
+     aria-hidden="true">
+
+
+    <div class="notifications-header">
+
+        <div>
+
+            <strong>
+                الإشعارات
+            </strong>
+
+            <span>
+                آخر التنبيهات
+            </span>
+
+        </div>
+
+
+        <button type="button"
+                id="close-notifications"
+                class="close-button"
+                aria-label="إغلاق">
+
+            ×
+
+        </button>
+
+    </div>
+
+
+    <div class="notifications-body">
+
+
+        <div class="notification-item unread">
+
+            <span class="notification-icon warning">
+                ⚠️
+            </span>
+
+            <div class="notification-content">
+
+                <strong>
+                    مخزون منخفض
+                </strong>
+
+                <p>
+                    بعض المنتجات وصلت إلى الحد الأدنى.
+                </p>
+
+                <small>
+                    منذ 10 دقائق
+                </small>
+
+            </div>
+
+        </div>
+
+
+        <div class="notification-item unread">
+
+            <span class="notification-icon order">
+                🛵
+            </span>
+
+            <div class="notification-content">
+
+                <strong>
+                    طلب توصيل جديد
+                </strong>
+
+                <p>
+                    يوجد طلب جديد بحاجة إلى التجهيز.
+                </p>
+
+                <small>
+                    منذ 25 دقيقة
+                </small>
+
+            </div>
+
+        </div>
+
+
+        <div class="notification-item">
+
+            <span class="notification-icon success">
+                ✓
+            </span>
+
+            <div class="notification-content">
+
+                <strong>
+                    عملية بيع ناجحة
+                </strong>
+
+                <p>
+                    تمت عملية بيع جديدة بنجاح.
+                </p>
+
+                <small>
+                    منذ ساعة
+                </small>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+
+    <div class="notifications-footer">
+
+        <a href="audit-log.html">
+            عرض سجل العمليات
+        </a>
+
+    </div>
+
+</div>
+
+
+
+<!-- =====================================================
+     USER MENU
+====================================================== -->
+
+<div id="user-menu"
+     class="user-dropdown"
+     aria-hidden="true">
+
+
+    <div class="user-dropdown-header">
+
+        <div class="user-avatar large">
+            أ
+        </div>
+
+
+        <div>
+
+            <strong id="dropdown-user-name">
+                أحمد محمد
+            </strong>
+
+            <span id="dropdown-user-email">
+                admin@example.com
+            </span>
+
+        </div>
+
+    </div>
+
+
+    <div class="user-dropdown-divider"></div>
+
+
+    <a href="employees.html"
+       class="user-dropdown-item">
+
+        <span>
+            👤
+        </span>
+
+        <span>
+            الملف الشخصي
+        </span>
+
+    </a>
+
+
+    <a href="settings.html"
+       class="user-dropdown-item">
+
+        <span>
+            ⚙️
+        </span>
+
+        <span>
+            الإعدادات
+        </span>
+
+    </a>
+
+
+    <a href="audit-log.html"
+       class="user-dropdown-item">
+
+        <span>
+            📋
+        </span>
+
+        <span>
+            سجل نشاطي
+        </span>
+
+    </a>
+
+
+    <div class="user-dropdown-divider"></div>
+
+
+    <button type="button"
+            id="logout-button"
+            class="user-dropdown-item logout-item">
+
+        <span>
+            🚪
+        </span>
+
+        <span>
+            تسجيل الخروج
+        </span>
+
+    </button>
+
+</div>
+
+
+
+<!-- =====================================================
+     GLOBAL SEARCH RESULTS
+====================================================== -->
+
+<div id="search-results"
+     class="search-results"
+     aria-hidden="true">
+
+    <div class="search-results-header">
+
+        <strong>
+            نتائج البحث
+        </strong>
+
+        <button type="button"
+                id="close-search-results">
+
+            ×
+
+        </button>
+
+    </div>
+
+
+    <div id="search-results-list"
+         class="search-results-list">
+
+        <div class="empty-search">
+
+            <span>
+                🔍
+            </span>
+
+            <p>
+                اكتب ما تريد البحث عنه
+            </p>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+<!-- =====================================================
+     CONFIRMATION MODAL
+====================================================== -->
+
+<div id="confirmation-modal"
+     class="modal-overlay"
+     aria-hidden="true">
+
+
+    <div class="modal-box">
+
+
+        <div class="modal-icon warning">
+            ⚠️
+        </div>
+
+
+        <h3 id="modal-title">
+            تأكيد العملية
+        </h3>
+
+
+        <p id="modal-message">
+            هل أنت متأكد من تنفيذ هذه العملية؟
+        </p>
+
+
+        <div class="modal-actions">
+
+            <button type="button"
+                    id="modal-cancel"
+                    class="btn btn-secondary">
+
+                إلغاء
+
+            </button>
+
+
+            <button type="button"
+                    id="modal-confirm"
+                    class="btn btn-primary">
+
+                تأكيد
+
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+<!-- =====================================================
+     TOAST CONTAINER
+====================================================== -->
+
+<div id="toast-container"
+     class="toast-container"
+     aria-live="polite"
+     aria-atomic="true">
+</div>
+
+
+
+<!-- =====================================================
+     LOADING OVERLAY
+====================================================== -->
+
+<div id="loading-overlay"
+     class="loading-overlay"
+     aria-hidden="true">
+
+
+    <div class="loading-box">
+
+        <div class="loading-spinner"></div>
+
+        <strong>
+            جاري التحميل...
+        </strong>
+
+        <span>
+            يرجى الانتظار
+        </span>
+
+    </div>
+
+</div>
+
+
+
+<!-- =====================================================
+     SCROLL TO TOP
+====================================================== -->
+
+<button type="button"
+        id="scroll-to-top"
+        class="scroll-to-top"
+        aria-label="العودة إلى الأعلى">
+
+    ↑
+
+</button>
+
+
+
+<!-- =====================================================
+     FIREBASE / APPLICATION SCRIPTS
+====================================================== -->
+
+<!-- Firebase configuration -->
+
+<script type="module"
+        src="js/firebase-config.js">
+</script>
+
+
+<!-- Authentication -->
+
+<script type="module"
+        src="js/auth.js">
+</script>
+
+
+<!-- Permissions -->
+
+<script type="module"
+        src="js/permissions.js">
+</script>
+
+
+<!-- Dashboard -->
+
+<script type="module"
+        src="js/dashboard.js">
+</script>
+
+
+<!-- Main application -->
+
+<script type="module"
+        src="js/app.js">
+</script>
+
+
+
+<!-- =====================================================
+     DASHBOARD BASIC UI
+====================================================== -->
+
+<script>
+
+document.addEventListener("DOMContentLoaded", function () {
+
+
+    /* ================================================
+       CURRENT YEAR
+    ================================================= */
+
+    const footerYear =
+        document.getElementById("footer-year");
+
+    if (footerYear) {
+
+        footerYear.textContent =
+            new Date().getFullYear();
+
+    }
+
+
+
+    /* ================================================
+       CURRENT DATE
+    ================================================= */
+
+    const currentDate =
+        document.getElementById("current-date");
+
+    if (currentDate) {
+
+        const today = new Date();
+
+        const day =
+            String(today.getDate()).padStart(2, "0");
+
+        const month =
+            String(today.getMonth() + 1).padStart(2, "0");
+
+        const year =
+            today.getFullYear();
+
+        currentDate.textContent =
+            `${day}/${month}/${year}`;
+
+    }
+
+
+
+    /* ================================================
+       MOBILE SIDEBAR
+    ================================================= */
+
+    const menuButton =
+        document.getElementById("mobile-menu-button");
+
+    const sidebar =
+        document.getElementById("sidebar");
+
+    const overlay =
+        document.getElementById("sidebar-overlay");
+
+
+    function openSidebar() {
+
+        if (!sidebar) return;
+
+        sidebar.classList.add("open");
+
+        if (overlay) {
+
+            overlay.classList.add("active");
+
+        }
+
+        document.body.classList.add(
+            "sidebar-open"
+        );
+
+    }
+
+
+    function closeSidebar() {
+
+        if (!sidebar) return;
+
+        sidebar.classList.remove("open");
+
+        if (overlay) {
+
+            overlay.classList.remove("active");
+
+        }
+
+        document.body.classList.remove(
+            "sidebar-open"
+        );
+
+    }
+
+
+    if (menuButton) {
+
+        menuButton.addEventListener(
+            "click",
+            openSidebar
+        );
+
+    }
+
+
+    if (overlay) {
+
+        overlay.addEventListener(
+            "click",
+            closeSidebar
+        );
+
+    }
+
+
+
+    /* ================================================
+       CLOSE SIDEBAR AFTER NAVIGATION
+    ================================================= */
+
+    const navigationLinks =
+        document.querySelectorAll(
+            ".sidebar-navigation .nav-item"
+        );
+
+
+    navigationLinks.forEach(function (link) {
+
+        link.addEventListener(
+            "click",
+            function () {
+
+                closeSidebar();
+
+            }
+        );
+
+    });
+
+
+
+    /* ================================================
+       NOTIFICATIONS
+    ================================================= */
+
+    const notificationsButton =
+        document.getElementById(
+            "notifications-button"
+        );
+
+    const notificationsPanel =
+        document.getElementById(
+            "notifications-panel"
+        );
+
+    const closeNotifications =
+        document.getElementById(
+            "close-notifications"
+        );
+
+
+    function toggleNotifications() {
+
+        if (!notificationsPanel) return;
+
+        const isOpen =
+            notificationsPanel.classList.contains(
+                "open"
+            );
+
+
+        if (isOpen) {
+
+            notificationsPanel.classList.remove(
+                "open"
+            );
+
+            notificationsPanel.setAttribute(
+                "aria-hidden",
+                "true"
+            );
+
+        } else {
+
+            notificationsPanel.classList.add(
+                "open"
+            );
+
+            notificationsPanel.setAttribute(
+                "aria-hidden",
+                "false"
+            );
+
+        }
+
+    }
+
+
+    if (notificationsButton) {
+
+        notificationsButton.addEventListener(
+            "click",
+            function (event) {
+
+                event.stopPropagation();
+
+                toggleNotifications();
+
+            }
+        );
+
+    }
+
+
+    if (closeNotifications) {
+
+        closeNotifications.addEventListener(
+            "click",
+            function () {
+
+                notificationsPanel.classList.remove(
+                    "open"
+                );
+
+                notificationsPanel.setAttribute(
+                    "aria-hidden",
+                    "true"
+                );
+
+            }
+        );
+
+    }
+
+
+
+    /* ================================================
+       USER MENU
+    ================================================= */
+
+    const userButton =
+        document.getElementById(
+            "user-menu-button"
+        );
+
+    const userMenu =
+        document.getElementById(
+            "user-menu"
+        );
+
+
+    function toggleUserMenu() {
+
+        if (!userMenu) return;
+
+        const isOpen =
+            userMenu.classList.contains(
+                "open"
+            );
+
+
+        if (isOpen) {
+
+            userMenu.classList.remove(
+                "open"
+            );
+
+            userMenu.setAttribute(
+                "aria-hidden",
+                "true"
+            );
+
+        } else {
+
+            userMenu.classList.add(
+                "open"
+            );
+
+            userMenu.setAttribute(
+                "aria-hidden",
+                "false"
+            );
+
+        }
+
+    }
+
+
+    if (userButton) {
+
+        userButton.addEventListener(
+            "click",
+            function (event) {
+
+                event.stopPropagation();
+
+                toggleUserMenu();
+
+            }
+        );
+
+    }
+
+
+
+    /* ================================================
+       CLOSE DROPDOWNS WHEN CLICKING OUTSIDE
+    ================================================= */
+
+    document.addEventListener(
+        "click",
+        function (event) {
+
+
+            if (
+                userMenu &&
+                !userMenu.contains(event.target) &&
+                userButton &&
+                !userButton.contains(event.target)
+            ) {
+
+                userMenu.classList.remove(
+                    "open"
+                );
+
+                userMenu.setAttribute(
+                    "aria-hidden",
+                    "true"
+                );
+
+            }
+
+
+            if (
+                notificationsPanel &&
+                !notificationsPanel.contains(
+                    event.target
+                ) &&
+                notificationsButton &&
+                !notificationsButton.contains(
+                    event.target
+                )
+            ) {
+
+                notificationsPanel.classList.remove(
+                    "open"
+                );
+
+                notificationsPanel.setAttribute(
+                    "aria-hidden",
+                    "true"
+                );
+
+            }
+
+        }
+    );
+
+
+
+    /* ================================================
+       GLOBAL SEARCH
+    ================================================= */
+
+    const globalSearch =
+        document.getElementById(
+            "global-search"
+        );
+
+    const searchResults =
+        document.getElementById(
+            "search-results"
+        );
+
+    const closeSearchResults =
+        document.getElementById(
+            "close-search-results"
+        );
+
+
+    if (globalSearch) {
+
+        globalSearch.addEventListener(
+            "input",
+            function () {
+
+                const value =
+                    globalSearch.value.trim();
+
+
+                if (value.length > 0) {
+
+                    if (searchResults) {
+
+                        searchResults.classList.add(
+                            "open"
+                        );
+
+                        searchResults.setAttribute(
+                            "aria-hidden",
+                            "false"
+                        );
+
+                    }
+
+                } else {
+
+                    if (searchResults) {
+
+                        searchResults.classList.remove(
+                            "open"
+                        );
+
+                        searchResults.setAttribute(
+                            "aria-hidden",
+                            "true"
+                        );
+
+                    }
+
+                }
+
+            }
+        );
+
+    }
+
+
+    if (closeSearchResults) {
+
+        closeSearchResults.addEventListener(
+            "click",
+            function () {
+
+                if (searchResults) {
+
+                    searchResults.classList.remove(
+                        "open"
+                    );
+
+                }
+
+                if (globalSearch) {
+
+                    globalSearch.value = "";
+
+                }
+
+            }
+        );
+
+    }
+
+
+
+    /* ================================================
+       SCROLL TO TOP
+    ================================================= */
+
+    const scrollButton =
+        document.getElementById(
+            "scroll-to-top"
+        );
+
+
+    function updateScrollButton() {
+
+        if (!scrollButton) return;
+
+
+        if (window.scrollY > 400) {
+
+            scrollButton.classList.add(
+                "visible"
+            );
+
+        } else {
+
+            scrollButton.classList.remove(
+                "visible"
+            );
+
+        }
+
+    }
+
+
+    window.addEventListener(
+        "scroll",
+        updateScrollButton
+    );
+
+
+    updateScrollButton();
+
+
+    if (scrollButton) {
+
+        scrollButton.addEventListener(
+            "click",
+            function () {
+
+                window.scrollTo({
+
+                    top: 0,
+
+                    behavior: "smooth"
+
+                });
+
+            }
+        );
+
+    }
+
+
+
+    /* ================================================
+       MODAL
+    ================================================= */
+
+    const modal =
+        document.getElementById(
+            "confirmation-modal"
+        );
+
+    const modalCancel =
+        document.getElementById(
+            "modal-cancel"
+        );
+
+
+    if (modalCancel) {
+
+        modalCancel.addEventListener(
+            "click",
+            function () {
+
+                modal.classList.remove(
+                    "open"
+                );
+
+                modal.setAttribute(
+                    "aria-hidden",
+                    "true"
+                );
+
+            }
+        );
+
+    }
+
+
+
+    /* ================================================
+       ESC KEY
+    ================================================= */
+
+    document.addEventListener(
+        "keydown",
+        function (event) {
+
+            if (event.key === "Escape") {
+
+
+                if (sidebar) {
+
+                    closeSidebar();
+
+                }
+
+
+                if (userMenu) {
+
+                    userMenu.classList.remove(
+                        "open"
+                    );
+
+                }
+
+
+                if (notificationsPanel) {
+
+                    notificationsPanel.classList.remove(
+                        "open"
+                    );
+
+                }
+
+
+                if (searchResults) {
+
+                    searchResults.classList.remove(
+                        "open"
+                    );
+
+                }
+
+
+                if (modal) {
+
+                    modal.classList.remove(
+                        "open"
+                    );
+
+                }
+
+            }
+
+        }
+    );
+
+
+});
+
+</script>
+
+
+
+<!-- =====================================================
+     CLOSE DASHBOARD CONTENT
+====================================================== -->
+
+</section>
+
+
+<!-- =====================================================
+     CLOSE MAIN CONTENT
+====================================================== -->
+
+</main>
+
+
+<!-- =====================================================
+     CLOSE APPLICATION
+====================================================== -->
+
+</div>
+
+
+<!-- =====================================================
+     CLOSE BODY / HTML
+====================================================== -->
+
+</body>
+
+  </html>
