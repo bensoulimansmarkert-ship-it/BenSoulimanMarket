@@ -1,0 +1,692 @@
+/* =========================================================
+   BEN SOULIMAN MARKET
+   RESPONSIVE CSS
+   المرحلة 1/4 — الأساسيات
+   ========================================================= */
+
+/* ---------- ضبط عام ---------- */
+
+html {
+    overflow-x: hidden;
+}
+
+body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+/* ---------- الصور ---------- */
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* ---------- الجداول ---------- */
+
+.table-container,
+.table-wrapper,
+.data-table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+/* ---------- الحاويات ---------- */
+
+.container,
+.dashboard-container,
+.content-container {
+    width: 100%;
+    max-width: 100%;
+}
+
+/* ---------- البطاقات ---------- */
+
+.cards-grid,
+.stats-grid,
+.dashboard-grid {
+    width: 100%;
+}
+
+/* ---------- النماذج ---------- */
+
+input,
+select,
+textarea,
+button {
+    max-width: 100%;
+}
+
+/* ---------- منع النصوص من كسر التصميم ---------- */
+
+.text-truncate {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+/* =========================================================
+   الأجهزة اللوحية
+   ========================================================= */
+
+@media (max-width: 1024px) {
+
+    .container,
+    .dashboard-container,
+    .content-container {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .cards-grid,
+    .stats-grid,
+    .dashboard-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+/* =========================================================
+   الهواتف
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+    .container,
+    .dashboard-container,
+    .content-container {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    .cards-grid,
+    .stats-grid,
+    .dashboard-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .row {
+        flex-wrap: wrap;
+    }
+
+    .col {
+        width: 100%;
+    }
+}
+
+/* =========================================================
+   الهواتف الصغيرة
+   ========================================================= */
+
+@media (max-width: 480px) {
+
+    .container,
+    .dashboard-container,
+    .content-container {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    h2 {
+        font-size: 1.3rem;
+    }
+
+    h3 {
+        font-size: 1.15rem;
+    }
+
+    button,
+    .btn {
+        max-width: 100%;
+    }
+}
+
+/* =========================================================
+   المرحلة 2/4 — Sidebar / Header / Navigation
+   ========================================================= */
+
+/* ---------- الشريط الجانبي ---------- */
+
+.sidebar {
+    transition: transform 0.3s ease,
+                width 0.3s ease;
+}
+
+.sidebar-overlay {
+    display: none;
+}
+
+/* ---------- محتوى لوحة التحكم ---------- */
+
+.main-content,
+.dashboard-content {
+    min-width: 0;
+}
+
+/* ---------- الهيدر ---------- */
+
+.header,
+.topbar,
+.dashboard-header {
+    width: 100%;
+    max-width: 100%;
+}
+
+.header-content,
+.topbar-content {
+    min-width: 0;
+}
+
+/* ---------- التنقل ---------- */
+
+.nav-menu,
+.sidebar-menu {
+    max-width: 100%;
+}
+
+.nav-item,
+.sidebar-item {
+    min-width: 0;
+}
+
+.nav-item a,
+.sidebar-item a {
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* =========================================================
+   الأجهزة اللوحية
+   ========================================================= */
+
+@media (max-width: 1024px) {
+
+    .sidebar {
+        width: 220px;
+    }
+
+    .main-content {
+        margin-right: 220px;
+    }
+
+    .header,
+    .topbar,
+    .dashboard-header {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+}
+
+/* =========================================================
+   الهاتف
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+    .sidebar {
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 1000;
+
+        width: 280px;
+        max-width: 85vw;
+
+        transform: translateX(100%);
+        overflow-y: auto;
+
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .sidebar.active,
+    .sidebar.open,
+    .sidebar.show {
+        transform: translateX(0);
+    }
+
+    .sidebar-overlay {
+        position: fixed;
+        inset: 0;
+        z-index: 999;
+
+        background: rgba(0, 0, 0, 0.45);
+    }
+
+    .sidebar.active ~ .sidebar-overlay,
+    .sidebar.open ~ .sidebar-overlay,
+    .sidebar.show ~ .sidebar-overlay {
+        display: block;
+    }
+
+    .main-content {
+        width: 100%;
+        margin-right: 0;
+        margin-left: 0;
+    }
+
+    .header,
+    .topbar,
+    .dashboard-header {
+        position: relative;
+        width: 100%;
+    }
+
+    .header-content,
+    .topbar-content {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 10px;
+
+        flex-wrap: wrap;
+    }
+
+    .nav-menu,
+    .sidebar-menu {
+        width: 100%;
+    }
+
+    .nav-item,
+    .sidebar-item {
+        width: 100%;
+    }
+}
+
+/* =========================================================
+   الهاتف الصغير
+   ========================================================= */
+
+@media (max-width: 480px) {
+
+    .sidebar {
+        width: 260px;
+        max-width: 88vw;
+    }
+
+    .header-content,
+    .topbar-content {
+        gap: 6px;
+    }
+
+    .nav-item a,
+    .sidebar-item a {
+        font-size: 14px;
+    }
+}
+
+/* =========================================================
+   المرحلة 3/4 — الجداول والنماذج والنوافذ والأزرار
+   ========================================================= */
+
+/* ---------- الجداول ---------- */
+
+@media (max-width: 768px) {
+
+    table {
+        width: 100%;
+        min-width: 600px;
+    }
+
+    th,
+    td {
+        white-space: nowrap;
+        padding: 8px;
+        font-size: 13px;
+    }
+
+    .table-container,
+    .table-wrapper,
+    .data-table-wrapper {
+        width: 100%;
+        overflow-x: auto;
+        border-radius: 8px;
+    }
+}
+
+/* ---------- النماذج ---------- */
+
+@media (max-width: 768px) {
+
+    .form-row {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        gap: 12px;
+    }
+
+    .form-group {
+        width: 100%;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .form-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+}
+
+/* ---------- الأزرار ---------- */
+
+@media (max-width: 768px) {
+
+    .btn-group {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+
+    .btn {
+        min-height: 40px;
+    }
+
+    .btn-group .btn {
+        flex: 1 1 auto;
+    }
+}
+
+/* ---------- النوافذ المنبثقة ---------- */
+
+@media (max-width: 768px) {
+
+    .modal {
+        padding: 10px;
+    }
+
+    .modal-content {
+        width: 100%;
+        max-width: 100%;
+        max-height: 90vh;
+
+        overflow-y: auto;
+        box-sizing: border-box;
+
+        margin: 5vh auto;
+    }
+
+    .modal-header,
+    .modal-body,
+    .modal-footer {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+}
+
+/* ---------- البطاقات ---------- */
+
+@media (max-width: 768px) {
+
+    .card {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .card-header {
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+
+    .card-body {
+        overflow-x: auto;
+    }
+}
+
+/* ---------- البحث والفلاتر ---------- */
+
+@media (max-width: 768px) {
+
+    .search-box,
+    .search-container,
+    .filters,
+    .filter-group {
+        width: 100%;
+    }
+
+    .search-box input,
+    .search-container input {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .filters {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+
+/* ---------- شريط الأدوات ---------- */
+
+@media (max-width: 768px) {
+
+    .toolbar {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .toolbar > * {
+        max-width: 100%;
+    }
+}
+
+/* ---------- النصوص الطويلة ---------- */
+
+@media (max-width: 480px) {
+
+    .page-title,
+    .section-title {
+        word-break: break-word;
+    }
+
+    .description,
+    .text-content {
+        overflow-wrap: anywhere;
+    }
+}
+
+/* =========================================================
+   المرحلة 4/4 — POS واللمسات النهائية للشاشات الصغيرة
+   ========================================================= */
+
+/* ---------- شاشة البيع POS ---------- */
+
+@media (max-width: 768px) {
+
+    .pos-container,
+    .pos-layout {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        gap: 15px;
+    }
+
+    .pos-products,
+    .pos-cart,
+    .products-panel,
+    .cart-panel {
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+
+    .product-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+    }
+
+    .product-card {
+        min-width: 0;
+    }
+
+    .cart-items {
+        max-height: 45vh;
+        overflow-y: auto;
+    }
+
+    .pos-actions {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 8px;
+    }
+
+    .pos-actions .btn {
+        width: 100%;
+    }
+}
+
+/* ---------- شاشات الهاتف الصغيرة ---------- */
+
+@media (max-width: 480px) {
+
+    .product-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 7px;
+    }
+
+    .product-card {
+        padding: 8px;
+    }
+
+    .product-card h3,
+    .product-card .product-name {
+        font-size: 13px;
+    }
+
+    .product-card .price {
+        font-size: 14px;
+    }
+
+    .pos-actions {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ---------- الأرقام والإحصائيات ---------- */
+
+@media (max-width: 768px) {
+
+    .stat-card,
+    .summary-card {
+        min-width: 0;
+        width: 100%;
+    }
+
+    .stat-value,
+    .summary-value {
+        word-break: break-word;
+    }
+}
+
+/* ---------- الشريط السفلي ---------- */
+
+@media (max-width: 768px) {
+
+    .bottom-actions {
+        position: sticky;
+        bottom: 0;
+        z-index: 50;
+
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+
+        width: 100%;
+        padding: 10px;
+
+        box-sizing: border-box;
+    }
+
+    .bottom-actions .btn {
+        flex: 1 1 120px;
+    }
+}
+
+/* ---------- تحسين اللمس على الهاتف ---------- */
+
+@media (max-width: 768px) {
+
+    button,
+    .btn,
+    a,
+    input,
+    select,
+    textarea {
+        touch-action: manipulation;
+    }
+
+    button,
+    .btn {
+        min-height: 40px;
+    }
+
+    input,
+    select {
+        min-height: 40px;
+    }
+}
+
+/* ---------- منع العناصر من الخروج عن الشاشة ---------- */
+
+* {
+    box-sizing: border-box;
+}
+
+@media (max-width: 768px) {
+
+    .dashboard,
+    .page,
+    .main,
+    main {
+        width: 100%;
+        max-width: 100%;
+        overflow-x: hidden;
+    }
+}
+
+/* ---------- شاشات شديدة الصغر ---------- */
+
+@media (max-width: 360px) {
+
+    .container,
+    .dashboard-container,
+    .content-container {
+        padding-left: 8px;
+        padding-right: 8px;
+    }
+
+    .product-grid {
+        gap: 5px;
+    }
+
+    .product-card {
+        padding: 6px;
+    }
+
+    .btn {
+        font-size: 13px;
+        padding: 8px 10px;
+    }
+
+    th,
+    td {
+        font-size: 12px;
+        padding: 6px;
+    }
+}
+
+/* =========================================================
+   نهاية responsive.css
+   BEN SOULIMAN MARKET
+   ========================================================= */
