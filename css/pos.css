@@ -1,0 +1,3491 @@
+/* =========================================================
+   سوبر ماركت بن سليمان
+   POS CSS
+   الجزء 1 / 4
+   شاشة نقطة البيع والكاشير
+   RTL - Arabic
+========================================================= */
+
+
+/* =========================================================
+   1. متغيرات شاشة نقطة البيع
+========================================================= */
+
+.pos-app {
+
+    --pos-primary: #2563eb;
+    --pos-primary-dark: #1d4ed8;
+
+    --pos-success: #16a34a;
+    --pos-warning: #f59e0b;
+    --pos-danger: #dc2626;
+
+    --pos-dark: #0f172a;
+    --pos-text: #334155;
+    --pos-muted: #64748b;
+
+    --pos-bg: #f1f5f9;
+    --pos-card: #ffffff;
+    --pos-border: #e2e8f0;
+
+    --pos-radius: 12px;
+
+    min-height: 100vh;
+
+    background:
+        var(--pos-bg);
+
+    color:
+        var(--pos-text);
+
+    direction: rtl;
+
+    font-family:
+        inherit;
+
+}
+
+
+/* =========================================================
+   2. الحاوية الرئيسية
+========================================================= */
+
+.pos-container {
+
+    width: 100%;
+
+    min-height: 100vh;
+
+    display: flex;
+
+    flex-direction: column;
+
+}
+
+
+/* =========================================================
+   3. رأس شاشة البيع
+========================================================= */
+
+.pos-header {
+
+    min-height: 70px;
+
+    background:
+        var(--pos-card);
+
+    border-bottom:
+        1px solid var(--pos-border);
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 20px;
+
+    padding:
+        12px 20px;
+
+    position: sticky;
+
+    top: 0;
+
+    z-index: 50;
+
+}
+
+
+/* =========================================================
+   4. عنوان نقطة البيع
+========================================================= */
+
+.pos-title {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    min-width: 180px;
+
+}
+
+.pos-title-icon {
+
+    width: 44px;
+
+    height: 44px;
+
+    border-radius: 12px;
+
+    background:
+        rgba(37, 99, 235, 0.10);
+
+    color:
+        var(--pos-primary);
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 22px;
+
+}
+
+.pos-title-content {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 2px;
+
+}
+
+.pos-title-content h1 {
+
+    margin: 0;
+
+    font-size: 20px;
+
+    font-weight: 800;
+
+    color:
+        var(--pos-dark);
+
+}
+
+.pos-title-content span {
+
+    font-size: 12px;
+
+    color:
+        var(--pos-muted);
+
+}
+
+
+/* =========================================================
+   5. البحث عن المنتجات
+========================================================= */
+
+.pos-search {
+
+    flex: 1;
+
+    max-width: 650px;
+
+    position: relative;
+
+}
+
+.pos-search input {
+
+    width: 100%;
+
+    height: 46px;
+
+    box-sizing: border-box;
+
+    border:
+        1px solid var(--pos-border);
+
+    border-radius: 12px;
+
+    background:
+        #f8fafc;
+
+    color:
+        var(--pos-dark);
+
+    padding:
+        0 48px 0 45px;
+
+    outline: none;
+
+    font-size: 14px;
+
+    transition:
+        0.2s ease;
+
+}
+
+.pos-search input:focus {
+
+    background:
+        #ffffff;
+
+    border-color:
+        var(--pos-primary);
+
+    box-shadow:
+        0 0 0 3px
+        rgba(37, 99, 235, 0.10);
+
+}
+
+.pos-search-icon {
+
+    position: absolute;
+
+    right: 16px;
+
+    top: 50%;
+
+    transform:
+        translateY(-50%);
+
+    color:
+        var(--pos-muted);
+
+    font-size: 18px;
+
+    pointer-events: none;
+
+}
+
+.pos-search-clear {
+
+    position: absolute;
+
+    left: 10px;
+
+    top: 50%;
+
+    transform:
+        translateY(-50%);
+
+    width: 30px;
+
+    height: 30px;
+
+    border: 0;
+
+    border-radius: 8px;
+
+    background: transparent;
+
+    color:
+        var(--pos-muted);
+
+    cursor: pointer;
+
+    font-size: 18px;
+
+}
+
+.pos-search-clear:hover {
+
+    background:
+        #e2e8f0;
+
+    color:
+        var(--pos-danger);
+
+}
+
+
+/* =========================================================
+   6. إجراءات رأس نقطة البيع
+========================================================= */
+
+.pos-header-actions {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+}
+
+.pos-header-button {
+
+    width: 42px;
+
+    height: 42px;
+
+    border:
+        1px solid var(--pos-border);
+
+    border-radius: 10px;
+
+    background:
+        #ffffff;
+
+    color:
+        var(--pos-text);
+
+    cursor: pointer;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 18px;
+
+    transition:
+        0.2s ease;
+
+}
+
+.pos-header-button:hover {
+
+    background:
+        #f8fafc;
+
+    border-color:
+        #cbd5e1;
+
+    color:
+        var(--pos-primary);
+
+}
+
+
+/* =========================================================
+   7. المحتوى الرئيسي
+========================================================= */
+
+.pos-main {
+
+    flex: 1;
+
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1fr)
+        390px;
+
+    gap: 18px;
+
+    padding: 18px;
+
+    min-width: 0;
+
+}
+
+
+/* =========================================================
+   8. قسم المنتجات
+========================================================= */
+
+.pos-products-section {
+
+    min-width: 0;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 14px;
+
+}
+
+
+/* =========================================================
+   9. شريط الأقسام
+========================================================= */
+
+.pos-categories {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    overflow-x: auto;
+
+    padding-bottom: 4px;
+
+    scrollbar-width: thin;
+
+}
+
+.pos-category {
+
+    flex:
+        0 0 auto;
+
+    border:
+        1px solid var(--pos-border);
+
+    background:
+        #ffffff;
+
+    color:
+        var(--pos-text);
+
+    border-radius: 10px;
+
+    padding:
+        9px 16px;
+
+    cursor: pointer;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    transition:
+        0.2s ease;
+
+    white-space: nowrap;
+
+}
+
+.pos-category:hover {
+
+    border-color:
+        var(--pos-primary);
+
+    color:
+        var(--pos-primary);
+
+}
+
+.pos-category.active {
+
+    background:
+        var(--pos-primary);
+
+    border-color:
+        var(--pos-primary);
+
+    color:
+        #ffffff;
+
+}
+
+
+/* =========================================================
+   10. عنوان المنتجات
+========================================================= */
+
+.pos-products-header {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 12px;
+
+}
+
+.pos-products-header h2 {
+
+    margin: 0;
+
+    color:
+        var(--pos-dark);
+
+    font-size: 18px;
+
+    font-weight: 800;
+
+}
+
+.pos-products-count {
+
+    color:
+        var(--pos-muted);
+
+    font-size: 13px;
+
+}
+
+
+/* =========================================================
+   11. شبكة المنتجات
+========================================================= */
+
+.pos-products-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(
+            auto-fill,
+            minmax(160px, 1fr)
+        );
+
+    gap: 12px;
+
+}
+
+
+/* =========================================================
+   12. بطاقة المنتج
+========================================================= */
+
+.pos-product-card {
+
+    position: relative;
+
+    background:
+        var(--pos-card);
+
+    border:
+        1px solid var(--pos-border);
+
+    border-radius:
+        var(--pos-radius);
+
+    padding: 12px;
+
+    cursor: pointer;
+
+    min-width: 0;
+
+    overflow: hidden;
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        border-color 0.2s ease;
+
+}
+
+.pos-product-card:hover {
+
+    transform:
+        translateY(-2px);
+
+    border-color:
+        rgba(37, 99, 235, 0.35);
+
+    box-shadow:
+        0 8px 20px
+        rgba(15, 23, 42, 0.08);
+
+}
+
+.pos-product-card:active {
+
+    transform:
+        scale(0.98);
+
+}
+
+
+/* =========================================================
+   13. صورة المنتج
+========================================================= */
+
+.pos-product-image {
+
+    width: 100%;
+
+    height: 125px;
+
+    border-radius: 10px;
+
+    background:
+        #f8fafc;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    overflow: hidden;
+
+    margin-bottom: 10px;
+
+}
+
+.pos-product-image img {
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: contain;
+
+}
+
+.pos-product-placeholder {
+
+    font-size: 42px;
+
+    opacity: 0.75;
+
+}
+
+
+/* =========================================================
+   14. معلومات المنتج
+========================================================= */
+
+.pos-product-info {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 5px;
+
+}
+
+.pos-product-name {
+
+    color:
+        var(--pos-dark);
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    line-height: 1.5;
+
+    display: -webkit-box;
+
+    -webkit-line-clamp: 2;
+
+    -webkit-box-orient: vertical;
+
+    overflow: hidden;
+
+}
+
+.pos-product-code {
+
+    color:
+        var(--pos-muted);
+
+    font-size: 11px;
+
+}
+
+.pos-product-bottom {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 8px;
+
+    margin-top: 4px;
+
+}
+
+.pos-product-price {
+
+    color:
+        var(--pos-primary);
+
+    font-size: 15px;
+
+    font-weight: 800;
+
+}
+
+.pos-product-stock {
+
+    font-size: 11px;
+
+    color:
+        var(--pos-success);
+
+}
+
+.pos-product-stock.low {
+
+    color:
+        var(--pos-warning);
+
+}
+
+.pos-product-stock.out {
+
+    color:
+        var(--pos-danger);
+
+}
+
+
+/* =========================================================
+   15. زر إضافة المنتج
+========================================================= */
+
+.pos-add-product {
+
+    position: absolute;
+
+    left: 10px;
+
+    top: 10px;
+
+    width: 34px;
+
+    height: 34px;
+
+    border: 0;
+
+    border-radius: 9px;
+
+    background:
+        var(--pos-primary);
+
+    color:
+        #ffffff;
+
+    cursor: pointer;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 18px;
+
+    box-shadow:
+        0 4px 10px
+        rgba(37, 99, 235, 0.25);
+
+}
+
+.pos-add-product:hover {
+
+    background:
+        var(--pos-primary-dark);
+
+}
+
+
+/* =========================================================
+   16. حالة عدم وجود منتجات
+========================================================= */
+
+.pos-empty-products {
+
+    grid-column:
+        1 / -1;
+
+    min-height: 260px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    flex-direction: column;
+
+    gap: 10px;
+
+    background:
+        #ffffff;
+
+    border:
+        1px dashed var(--pos-border);
+
+    border-radius:
+        var(--pos-radius);
+
+    color:
+        var(--pos-muted);
+
+}
+
+.pos-empty-products-icon {
+
+    font-size: 45px;
+
+    opacity: 0.55;
+
+}
+
+.pos-empty-products strong {
+
+    color:
+        var(--pos-dark);
+
+    font-size: 15px;
+
+}
+
+.pos-empty-products span {
+
+    font-size: 13px;
+
+}
+
+
+/* =========================================================
+   17. سلة المشتريات
+========================================================= */
+
+.pos-cart {
+
+    background:
+        var(--pos-card);
+
+    border:
+        1px solid var(--pos-border);
+
+    border-radius:
+        var(--pos-radius);
+
+    display: flex;
+
+    flex-direction: column;
+
+    min-height: 0;
+
+    height:
+        calc(100vh - 106px);
+
+    position: sticky;
+
+    top: 88px;
+
+    overflow: hidden;
+
+}
+
+
+/* =========================================================
+   18. رأس السلة
+========================================================= */
+
+.pos-cart-header {
+
+    min-height: 60px;
+
+    padding:
+        12px 16px;
+
+    border-bottom:
+        1px solid var(--pos-border);
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 10px;
+
+}
+
+.pos-cart-title {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 9px;
+
+}
+
+.pos-cart-title h2 {
+
+    margin: 0;
+
+    color:
+        var(--pos-dark);
+
+    font-size: 16px;
+
+    font-weight: 800;
+
+}
+
+.pos-cart-count {
+
+    min-width: 24px;
+
+    height: 24px;
+
+    padding:
+        0 6px;
+
+    border-radius: 20px;
+
+    background:
+        rgba(37, 99, 235, 0.10);
+
+    color:
+        var(--pos-primary);
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 11px;
+
+    font-weight: 800;
+
+}
+
+.pos-clear-cart {
+
+    border: 0;
+
+    background: transparent;
+
+    color:
+        var(--pos-danger);
+
+    cursor: pointer;
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+    padding: 6px;
+
+}
+
+.pos-clear-cart:hover {
+
+    text-decoration:
+        underline;
+
+}
+
+
+/* =========================================================
+   19. عناصر السلة
+========================================================= */
+
+.pos-cart-items {
+
+    flex: 1;
+
+    overflow-y: auto;
+
+    padding: 10px;
+
+}
+
+.pos-cart-item {
+
+    display: grid;
+
+    grid-template-columns:
+        48px minmax(0, 1fr);
+
+    gap: 10px;
+
+    padding:
+        10px 0;
+
+    border-bottom:
+        1px solid #f1f5f9;
+
+}
+
+.pos-cart-item:last-child {
+
+    border-bottom: 0;
+
+}
+
+.pos-cart-item-image {
+
+    width: 48px;
+
+    height: 48px;
+
+    border-radius: 9px;
+
+    background:
+        #f8fafc;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    overflow: hidden;
+
+}
+
+.pos-cart-item-image img {
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: contain;
+
+}
+
+.pos-cart-item-image span {
+
+    font-size: 22px;
+
+}
+
+.pos-cart-item-content {
+
+    min-width: 0;
+
+}
+
+.pos-cart-item-name {
+
+    display: block;
+
+    color:
+        var(--pos-dark);
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    white-space: nowrap;
+
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+
+}
+
+.pos-cart-item-price {
+
+    display: block;
+
+    color:
+        var(--pos-muted);
+
+    font-size: 11px;
+
+    margin-top: 3px;
+
+}
+
+
+/* =========================================================
+   20. نهاية الجزء الأول
+========================================================= */
+
+/* =========================================================
+   سوبر ماركت بن سليمان
+   POS CSS
+   الجزء 2 / 4
+   السلة - الكميات - الإجماليات - الدفع
+========================================================= */
+
+
+/* =========================================================
+   21. كمية المنتج داخل السلة
+========================================================= */
+
+.pos-cart-item-controls {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 8px;
+
+    margin-top: 8px;
+
+}
+
+
+.pos-quantity-control {
+
+    display: flex;
+
+    align-items: center;
+
+    border:
+        1px solid var(--pos-border);
+
+    border-radius: 8px;
+
+    overflow: hidden;
+
+    background:
+        #ffffff;
+
+}
+
+
+.pos-quantity-button {
+
+    width: 28px;
+
+    height: 28px;
+
+    border: 0;
+
+    background:
+        #f8fafc;
+
+    color:
+        var(--pos-dark);
+
+    cursor: pointer;
+
+    font-size: 15px;
+
+    font-weight: 700;
+
+}
+
+
+.pos-quantity-button:hover {
+
+    background:
+        #e2e8f0;
+
+    color:
+        var(--pos-primary);
+
+}
+
+
+.pos-quantity-value {
+
+    min-width: 30px;
+
+    text-align: center;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    color:
+        var(--pos-dark);
+
+}
+
+
+/* =========================================================
+   22. حذف عنصر من السلة
+========================================================= */
+
+.pos-remove-item {
+
+    width: 28px;
+
+    height: 28px;
+
+    border: 0;
+
+    border-radius: 7px;
+
+    background:
+        transparent;
+
+    color:
+        var(--pos-muted);
+
+    cursor: pointer;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+}
+
+
+.pos-remove-item:hover {
+
+    background:
+        rgba(220, 38, 38, 0.08);
+
+    color:
+        var(--pos-danger);
+
+}
+
+
+/* =========================================================
+   23. سعر إجمالي عنصر السلة
+========================================================= */
+
+.pos-cart-item-total {
+
+    color:
+        var(--pos-primary);
+
+    font-size: 13px;
+
+    font-weight: 800;
+
+    white-space: nowrap;
+
+}
+
+
+/* =========================================================
+   24. السلة الفارغة
+========================================================= */
+
+.pos-empty-cart {
+
+    min-height: 220px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+
+    gap: 8px;
+
+    color:
+        var(--pos-muted);
+
+}
+
+
+.pos-empty-cart-icon {
+
+    width: 64px;
+
+    height: 64px;
+
+    border-radius: 50%;
+
+    background:
+        #f1f5f9;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 30px;
+
+    opacity: 0.75;
+
+}
+
+
+.pos-empty-cart strong {
+
+    color:
+        var(--pos-dark);
+
+    font-size: 14px;
+
+}
+
+
+.pos-empty-cart span {
+
+    font-size: 12px;
+
+}
+
+
+/* =========================================================
+   25. ملخص الفاتورة
+========================================================= */
+
+.pos-summary {
+
+    border-top:
+        1px solid var(--pos-border);
+
+    padding:
+        14px 16px 10px;
+
+    background:
+        #ffffff;
+
+}
+
+
+.pos-summary-row {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 10px;
+
+    margin-bottom: 8px;
+
+    color:
+        var(--pos-muted);
+
+    font-size: 13px;
+
+}
+
+
+.pos-summary-row strong {
+
+    color:
+        var(--pos-text);
+
+    font-weight: 700;
+
+}
+
+
+.pos-summary-row.discount {
+
+    color:
+        var(--pos-success);
+
+}
+
+
+.pos-summary-row.discount strong {
+
+    color:
+        var(--pos-success);
+
+}
+
+
+.pos-summary-row.tax strong {
+
+    color:
+        var(--pos-text);
+
+}
+
+
+/* =========================================================
+   26. الإجمالي النهائي
+========================================================= */
+
+.pos-grand-total {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 10px;
+
+    padding-top:
+        10px;
+
+    margin-top:
+        8px;
+
+    border-top:
+        1px dashed var(--pos-border);
+
+}
+
+
+.pos-grand-total-label {
+
+    color:
+        var(--pos-dark);
+
+    font-size: 15px;
+
+    font-weight: 800;
+
+}
+
+
+.pos-grand-total-value {
+
+    color:
+        var(--pos-primary);
+
+    font-size: 22px;
+
+    font-weight: 900;
+
+}
+
+
+/* =========================================================
+   27. حقل الخصم
+========================================================= */
+
+.pos-discount-box {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    margin:
+        8px 0;
+
+}
+
+
+.pos-discount-input {
+
+    flex: 1;
+
+    height: 38px;
+
+    box-sizing: border-box;
+
+    border:
+        1px solid var(--pos-border);
+
+    border-radius: 8px;
+
+    padding:
+        0 10px;
+
+    outline: none;
+
+    color:
+        var(--pos-dark);
+
+    background:
+        #f8fafc;
+
+    font-size: 13px;
+
+}
+
+
+.pos-discount-input:focus {
+
+    background:
+        #ffffff;
+
+    border-color:
+        var(--pos-primary);
+
+}
+
+
+.pos-discount-type {
+
+    height: 38px;
+
+    border:
+        1px solid var(--pos-border);
+
+    border-radius: 8px;
+
+    padding:
+        0 8px;
+
+    background:
+        #ffffff;
+
+    color:
+        var(--pos-text);
+
+    outline: none;
+
+    font-size: 12px;
+
+}
+
+
+/* =========================================================
+   28. زر الدفع الرئيسي
+========================================================= */
+
+.pos-payment-button {
+
+    width: 100%;
+
+    min-height: 50px;
+
+    border: 0;
+
+    border-radius: 11px;
+
+    background:
+        var(--pos-success);
+
+    color:
+        #ffffff;
+
+    cursor: pointer;
+
+    font-size: 15px;
+
+    font-weight: 800;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 8px;
+
+    margin-top: 10px;
+
+    transition:
+        0.2s ease;
+
+}
+
+
+.pos-payment-button:hover {
+
+    filter:
+        brightness(0.95);
+
+    transform:
+        translateY(-1px);
+
+}
+
+
+.pos-payment-button:active {
+
+    transform:
+        scale(0.98);
+
+}
+
+
+.pos-payment-button:disabled {
+
+    opacity: 0.5;
+
+    cursor:
+        not-allowed;
+
+    transform:
+        none;
+
+}
+
+
+/* =========================================================
+   29. أزرار عمليات السلة
+========================================================= */
+
+.pos-cart-actions {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 8px;
+
+    padding:
+        10px 16px 16px;
+
+}
+
+
+.pos-cart-action {
+
+    min-height: 40px;
+
+    border:
+        1px solid var(--pos-border);
+
+    border-radius: 9px;
+
+    background:
+        #ffffff;
+
+    color:
+        var(--pos-text);
+
+    cursor: pointer;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 6px;
+
+    transition:
+        0.2s ease;
+
+}
+
+
+.pos-cart-action:hover {
+
+    background:
+        #f8fafc;
+
+    border-color:
+        #cbd5e1;
+
+}
+
+
+.pos-cart-action.hold {
+
+    color:
+        var(--pos-warning);
+
+}
+
+
+.pos-cart-action.cancel {
+
+    color:
+        var(--pos-danger);
+
+}
+
+
+/* =========================================================
+   30. منطقة اختيار العميل
+========================================================= */
+
+.pos-customer-box {
+
+    padding:
+        10px 16px;
+
+    border-bottom:
+        1px solid var(--pos-border);
+
+}
+
+
+.pos-customer-select {
+
+    width: 100%;
+
+    height: 40px;
+
+    box-sizing: border-box;
+
+    border:
+        1px solid var(--pos-border);
+
+    border-radius: 9px;
+
+    padding:
+        0 10px;
+
+    background:
+        #f8fafc;
+
+    color:
+        var(--pos-text);
+
+    outline: none;
+
+    font-size: 12px;
+
+}
+
+
+.pos-customer-select:focus {
+
+    background:
+        #ffffff;
+
+    border-color:
+        var(--pos-primary);
+
+}
+
+
+/* =========================================================
+   31. معلومات الكاشير
+========================================================= */
+
+.pos-cashier-info {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    color:
+        var(--pos-muted);
+
+    font-size: 11px;
+
+}
+
+
+.pos-cashier-avatar {
+
+    width: 28px;
+
+    height: 28px;
+
+    border-radius: 50%;
+
+    background:
+        rgba(37, 99, 235, 0.10);
+
+    color:
+        var(--pos-primary);
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+}
+
+
+/* =========================================================
+   32. شاشة الدفع المنبثقة
+========================================================= */
+
+.pos-payment-modal {
+
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 1000;
+
+    display: none;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 20px;
+
+    background:
+        rgba(15, 23, 42, 0.55);
+
+}
+
+
+.pos-payment-modal.active {
+
+    display: flex;
+
+}
+
+
+.pos-payment-dialog {
+
+    width: 100%;
+
+    max-width: 480px;
+
+    max-height: 90vh;
+
+    overflow-y: auto;
+
+    background:
+        #ffffff;
+
+    border-radius:
+        16px;
+
+    box-shadow:
+        0 25px 60px
+        rgba(15, 23, 42, 0.20);
+
+}
+
+
+.pos-payment-header {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 10px;
+
+    padding:
+        16px 18px;
+
+    border-bottom:
+        1px solid var(--pos-border);
+
+}
+
+
+.pos-payment-header h3 {
+
+    margin: 0;
+
+    color:
+        var(--pos-dark);
+
+    font-size: 17px;
+
+    font-weight: 800;
+
+}
+
+
+.pos-payment-close {
+
+    width: 34px;
+
+    height: 34px;
+
+    border: 0;
+
+    border-radius: 8px;
+
+    background:
+        #f1f5f9;
+
+    color:
+        var(--pos-muted);
+
+    cursor: pointer;
+
+    font-size: 20px;
+
+}
+
+
+.pos-payment-close:hover {
+
+    color:
+        var(--pos-danger);
+
+    background:
+        #fee2e2;
+
+}
+
+
+/* =========================================================
+   33. مبلغ الفاتورة في الدفع
+========================================================= */
+
+.pos-payment-total {
+
+    text-align: center;
+
+    padding:
+        20px;
+
+    background:
+        #f8fafc;
+
+}
+
+
+.pos-payment-total span {
+
+    display: block;
+
+    color:
+        var(--pos-muted);
+
+    font-size: 12px;
+
+    margin-bottom: 6px;
+
+}
+
+
+.pos-payment-total strong {
+
+    display: block;
+
+    color:
+        var(--pos-primary);
+
+    font-size: 30px;
+
+    font-weight: 900;
+
+}
+
+
+/* =========================================================
+   34. طرق الدفع
+========================================================= */
+
+.pos-payment-methods {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 8px;
+
+    padding:
+        16px;
+
+}
+
+
+.pos-payment-method {
+
+    min-height: 70px;
+
+    border:
+        1px solid var(--pos-border);
+
+    border-radius: 10px;
+
+    background:
+        #ffffff;
+
+    color:
+        var(--pos-text);
+
+    cursor: pointer;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 5px;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+}
+
+
+.pos-payment-method span:first-child {
+
+    font-size: 22px;
+
+}
+
+
+.pos-payment-method:hover {
+
+    border-color:
+        var(--pos-primary);
+
+}
+
+
+.pos-payment-method.active {
+
+    border-color:
+        var(--pos-primary);
+
+    background:
+        rgba(37, 99, 235, 0.08);
+
+    color:
+        var(--pos-primary);
+
+}
+
+
+/* =========================================================
+   35. تفاصيل الدفع
+========================================================= */
+
+.pos-payment-form {
+
+    padding:
+        0 16px 16px;
+
+}
+
+
+.pos-payment-field {
+
+    margin-bottom:
+        12px;
+
+}
+
+
+.pos-payment-field label {
+
+    display: block;
+
+    margin-bottom:
+        6px;
+
+    color:
+        var(--pos-text);
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+}
+
+
+.pos-payment-field input {
+
+    width: 100%;
+
+    height: 44px;
+
+    box-sizing: border-box;
+
+    border:
+        1px solid var(--pos-border);
+
+    border-radius: 9px;
+
+    padding:
+        0 12px;
+
+    outline: none;
+
+    color:
+        var(--pos-dark);
+
+    font-size: 14px;
+
+}
+
+
+.pos-payment-field input:focus {
+
+    border-color:
+        var(--pos-primary);
+
+    box-shadow:
+        0 0 0 3px
+        rgba(37, 99, 235, 0.08);
+
+}
+
+
+/* =========================================================
+   36. المبلغ المتبقي
+========================================================= */
+
+.pos-payment-change {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding:
+        12px;
+
+    border-radius: 9px;
+
+    background:
+        #f0fdf4;
+
+    color:
+        var(--pos-success);
+
+    margin-bottom:
+        12px;
+
+}
+
+
+.pos-payment-change strong {
+
+    font-size: 17px;
+
+}
+
+
+/* =========================================================
+   37. زر تأكيد الدفع
+========================================================= */
+
+.pos-confirm-payment {
+
+    width: 100%;
+
+    height: 48px;
+
+    border: 0;
+
+    border-radius: 10px;
+
+    background:
+        var(--pos-primary);
+
+    color:
+        #ffffff;
+
+    cursor: pointer;
+
+    font-size: 14px;
+
+    font-weight: 800;
+
+}
+
+
+.pos-confirm-payment:hover {
+
+    background:
+        var(--pos-primary-dark);
+
+}
+
+
+/* =========================================================
+   نهاية الجزء 2 / 4
+========================================================= */
+
+/* =========================================================
+   سوبر ماركت بن سليمان
+   POS CSS
+   الجزء 3 / 4
+   الباركود - الملاحظات - المبالغ السريعة - الإشعارات
+========================================================= */
+
+/* =========================================================
+   39. شريط أدوات نقطة البيع
+========================================================= */
+
+.pos-tools {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+    padding: 10px 14px;
+    border-bottom: 1px solid var(--pos-border);
+    background: #ffffff;
+}
+
+.pos-tool-button {
+    min-height: 36px;
+    padding: 0 12px;
+    border: 1px solid var(--pos-border);
+    border-radius: 8px;
+    background: #ffffff;
+    color: var(--pos-text);
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    font-size: 12px;
+    font-weight: 700;
+    transition: .2s ease;
+}
+
+.pos-tool-button:hover {
+    background: #f8fafc;
+    border-color: #cbd5e1;
+}
+
+.pos-tool-button.primary {
+    background: var(--pos-primary);
+    color: #ffffff;
+    border-color: var(--pos-primary);
+}
+
+.pos-tool-button.primary:hover {
+    background: var(--pos-primary-dark);
+}
+
+.pos-tool-button.success {
+    color: var(--pos-success);
+}
+
+.pos-tool-button.warning {
+    color: var(--pos-warning);
+}
+
+.pos-tool-button.danger {
+    color: var(--pos-danger);
+}
+
+
+/* =========================================================
+   40. قارئ الباركود
+========================================================= */
+
+.pos-barcode-box {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 14px;
+    background: #f8fafc;
+    border-bottom: 1px solid var(--pos-border);
+}
+
+.pos-barcode-input {
+    flex: 1;
+    min-width: 0;
+    height: 42px;
+    box-sizing: border-box;
+    border: 1px solid var(--pos-border);
+    border-radius: 9px;
+    padding: 0 12px;
+    outline: none;
+    background: #ffffff;
+    color: var(--pos-dark);
+    font-size: 13px;
+    direction: ltr;
+    text-align: left;
+}
+
+.pos-barcode-input:focus {
+    border-color: var(--pos-primary);
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, .08);
+}
+
+.pos-barcode-button {
+    width: 42px;
+    height: 42px;
+    flex: 0 0 42px;
+    border: 0;
+    border-radius: 9px;
+    background: var(--pos-primary);
+    color: #ffffff;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 17px;
+}
+
+.pos-barcode-button:hover {
+    background: var(--pos-primary-dark);
+}
+
+.pos-barcode-status {
+    padding: 6px 14px;
+    background: #ffffff;
+    color: var(--pos-muted);
+    font-size: 11px;
+}
+
+.pos-barcode-status.success {
+    color: var(--pos-success);
+}
+
+.pos-barcode-status.error {
+    color: var(--pos-danger);
+}
+
+
+/* =========================================================
+   41. المبالغ السريعة
+========================================================= */
+
+.pos-quick-cash {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 7px;
+    margin-top: 10px;
+}
+
+.pos-quick-cash-button {
+    min-height: 38px;
+    border: 1px solid var(--pos-border);
+    border-radius: 8px;
+    background: #ffffff;
+    color: var(--pos-text);
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: 700;
+    transition: .2s ease;
+}
+
+.pos-quick-cash-button:hover {
+    background: #eff6ff;
+    border-color: var(--pos-primary);
+    color: var(--pos-primary);
+}
+
+.pos-quick-cash-button.exact {
+    background: #f0fdf4;
+    color: var(--pos-success);
+    border-color: #bbf7d0;
+}
+
+
+/* =========================================================
+   42. ملاحظات الفاتورة
+========================================================= */
+
+.pos-note-box {
+    padding: 10px 16px;
+    border-bottom: 1px solid var(--pos-border);
+}
+
+.pos-note-label {
+    display: block;
+    margin-bottom: 6px;
+    color: var(--pos-text);
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.pos-note-input {
+    width: 100%;
+    min-height: 70px;
+    box-sizing: border-box;
+    resize: vertical;
+    border: 1px solid var(--pos-border);
+    border-radius: 9px;
+    padding: 9px 10px;
+    outline: none;
+    background: #f8fafc;
+    color: var(--pos-dark);
+    font-family: inherit;
+    font-size: 12px;
+    line-height: 1.6;
+}
+
+.pos-note-input:focus {
+    background: #ffffff;
+    border-color: var(--pos-primary);
+}
+
+
+/* =========================================================
+   43. نافذة الخصم
+========================================================= */
+
+.pos-discount-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 1010;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background: rgba(15, 23, 42, .55);
+}
+
+.pos-discount-modal.active {
+    display: flex;
+}
+
+.pos-discount-dialog {
+    width: 100%;
+    max-width: 400px;
+    background: #ffffff;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 25px 60px rgba(15, 23, 42, .20);
+}
+
+.pos-discount-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    padding: 15px 18px;
+    border-bottom: 1px solid var(--pos-border);
+}
+
+.pos-discount-header h3 {
+    margin: 0;
+    color: var(--pos-dark);
+    font-size: 16px;
+    font-weight: 800;
+}
+
+.pos-discount-close {
+    width: 32px;
+    height: 32px;
+    border: 0;
+    border-radius: 8px;
+    background: #f1f5f9;
+    color: var(--pos-muted);
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.pos-discount-close:hover {
+    background: #fee2e2;
+    color: var(--pos-danger);
+}
+
+.pos-discount-body {
+    padding: 18px;
+}
+
+.pos-discount-body label {
+    display: block;
+    margin-bottom: 7px;
+    color: var(--pos-text);
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.pos-discount-body input,
+.pos-discount-body select {
+    width: 100%;
+    height: 42px;
+    box-sizing: border-box;
+    margin-bottom: 12px;
+    border: 1px solid var(--pos-border);
+    border-radius: 9px;
+    padding: 0 10px;
+    outline: none;
+    background: #ffffff;
+    color: var(--pos-dark);
+    font-size: 13px;
+}
+
+.pos-discount-body input:focus,
+.pos-discount-body select:focus {
+    border-color: var(--pos-primary);
+}
+
+.pos-discount-actions {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+}
+
+.pos-discount-apply,
+.pos-discount-cancel {
+    height: 42px;
+    border-radius: 9px;
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: 800;
+}
+
+.pos-discount-apply {
+    border: 0;
+    background: var(--pos-primary);
+    color: #ffffff;
+}
+
+.pos-discount-apply:hover {
+    background: var(--pos-primary-dark);
+}
+
+.pos-discount-cancel {
+    border: 1px solid var(--pos-border);
+    background: #ffffff;
+    color: var(--pos-text);
+}
+
+
+/* =========================================================
+   44. نافذة تأكيد العملية
+========================================================= */
+
+.pos-confirm-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 1020;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background: rgba(15, 23, 42, .55);
+}
+
+.pos-confirm-modal.active {
+    display: flex;
+}
+
+.pos-confirm-dialog {
+    width: 100%;
+    max-width: 380px;
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 24px;
+    text-align: center;
+    box-shadow: 0 25px 60px rgba(15, 23, 42, .20);
+}
+
+.pos-confirm-icon {
+    width: 62px;
+    height: 62px;
+    margin: 0 auto 12px;
+    border-radius: 50%;
+    background: #fef3c7;
+    color: var(--pos-warning);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+}
+
+.pos-confirm-dialog h3 {
+    margin: 0 0 7px;
+    color: var(--pos-dark);
+    font-size: 17px;
+    font-weight: 800;
+}
+
+.pos-confirm-dialog p {
+    margin: 0 0 18px;
+    color: var(--pos-muted);
+    font-size: 12px;
+    line-height: 1.7;
+}
+
+.pos-confirm-actions {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+}
+
+.pos-confirm-yes,
+.pos-confirm-no {
+    height: 42px;
+    border-radius: 9px;
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: 800;
+}
+
+.pos-confirm-yes {
+    border: 0;
+    background: var(--pos-danger);
+    color: #ffffff;
+}
+
+.pos-confirm-no {
+    border: 1px solid var(--pos-border);
+    background: #ffffff;
+    color: var(--pos-text);
+}
+
+
+/* =========================================================
+   45. رسالة نجاح البيع
+========================================================= */
+
+.pos-success-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 1030;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background: rgba(15, 23, 42, .55);
+}
+
+.pos-success-modal.active {
+    display: flex;
+}
+
+.pos-success-dialog {
+    width: 100%;
+    max-width: 420px;
+    background: #ffffff;
+    border-radius: 17px;
+    padding: 25px;
+    text-align: center;
+    box-shadow: 0 25px 60px rgba(15, 23, 42, .20);
+}
+
+.pos-success-icon {
+    width: 70px;
+    height: 70px;
+    margin: 0 auto 13px;
+    border-radius: 50%;
+    background: #dcfce7;
+    color: var(--pos-success);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 32px;
+}
+
+.pos-success-dialog h3 {
+    margin: 0 0 7px;
+    color: var(--pos-dark);
+    font-size: 19px;
+    font-weight: 900;
+}
+
+.pos-success-dialog p {
+    margin: 0 0 18px;
+    color: var(--pos-muted);
+    font-size: 12px;
+}
+
+.pos-success-number {
+    display: block;
+    margin-bottom: 18px;
+    color: var(--pos-primary);
+    font-size: 14px;
+    font-weight: 800;
+}
+
+.pos-success-actions {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+}
+
+.pos-success-button {
+    height: 43px;
+    border-radius: 9px;
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: 800;
+    border: 1px solid var(--pos-border);
+    background: #ffffff;
+    color: var(--pos-text);
+}
+
+.pos-success-button.primary {
+    border-color: var(--pos-primary);
+    background: var(--pos-primary);
+    color: #ffffff;
+}
+
+.pos-success-button.primary:hover {
+    background: var(--pos-primary-dark);
+}
+
+
+/* =========================================================
+   46. إشعارات POS
+========================================================= */
+
+.pos-notification-container {
+    position: fixed;
+    top: 18px;
+    left: 18px;
+    z-index: 2000;
+    width: min(360px, calc(100% - 36px));
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.pos-notification {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 12px 14px;
+    border: 1px solid var(--pos-border);
+    border-radius: 10px;
+    background: #ffffff;
+    box-shadow: 0 10px 30px rgba(15, 23, 42, .12);
+    animation: posNotificationIn .25s ease;
+}
+
+.pos-notification-icon {
+    width: 30px;
+    height: 30px;
+    flex: 0 0 30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f1f5f9;
+    color: var(--pos-primary);
+}
+
+.pos-notification-content {
+    flex: 1;
+    min-width: 0;
+}
+
+.pos-notification-title {
+    display: block;
+    margin-bottom: 3px;
+    color: var(--pos-dark);
+    font-size: 12px;
+    font-weight: 800;
+}
+
+.pos-notification-message {
+    color: var(--pos-muted);
+    font-size: 11px;
+    line-height: 1.6;
+}
+
+.pos-notification.success {
+    border-right: 3px solid var(--pos-success);
+}
+
+.pos-notification.success .pos-notification-icon {
+    color: var(--pos-success);
+    background: #dcfce7;
+}
+
+.pos-notification.error {
+    border-right: 3px solid var(--pos-danger);
+}
+
+.pos-notification.error .pos-notification-icon {
+    color: var(--pos-danger);
+    background: #fee2e2;
+}
+
+.pos-notification.warning {
+    border-right: 3px solid var(--pos-warning);
+}
+
+.pos-notification.warning .pos-notification-icon {
+    color: var(--pos-warning);
+    background: #fef3c7;
+}
+
+.pos-notification-close {
+    width: 24px;
+    height: 24px;
+    border: 0;
+    background: transparent;
+    color: var(--pos-muted);
+    cursor: pointer;
+}
+
+.pos-notification-close:hover {
+    color: var(--pos-danger);
+}
+
+
+/* =========================================================
+   47. حركة الإشعارات
+========================================================= */
+
+@keyframes posNotificationIn {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes posNotificationOut {
+    from {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+    to {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+}
+
+.pos-notification.removing {
+    animation: posNotificationOut .2s ease forwards;
+}
+
+
+/* =========================================================
+   نهاية الجزء 3 / 4
+========================================================= */
+
+/* =========================================================
+   سوبر ماركت بن سليمان
+   POS CSS
+   الجزء 4 / 4
+   الفاتورة - الطباعة - الحالات - Responsive
+========================================================= */
+
+
+/* =========================================================
+   48. معاينة الفاتورة
+========================================================= */
+
+.pos-receipt-preview {
+    width: 100%;
+    max-width: 360px;
+    margin: 0 auto;
+    padding: 18px;
+    box-sizing: border-box;
+    background: #ffffff;
+    color: #111827;
+    font-family: Arial, Tahoma, sans-serif;
+    direction: rtl;
+}
+
+.pos-receipt-header {
+    text-align: center;
+    padding-bottom: 12px;
+    border-bottom: 1px dashed #cbd5e1;
+}
+
+.pos-receipt-logo {
+    width: 58px;
+    height: 58px;
+    margin: 0 auto 8px;
+    border-radius: 50%;
+    background: #f1f5f9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 25px;
+}
+
+.pos-receipt-store-name {
+    display: block;
+    color: #111827;
+    font-size: 17px;
+    font-weight: 900;
+}
+
+.pos-receipt-subtitle {
+    display: block;
+    margin-top: 4px;
+    color: #64748b;
+    font-size: 10px;
+}
+
+.pos-receipt-info {
+    padding: 10px 0;
+    border-bottom: 1px dashed #cbd5e1;
+}
+
+.pos-receipt-info-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    margin-bottom: 5px;
+    font-size: 10px;
+}
+
+.pos-receipt-info-row:last-child {
+    margin-bottom: 0;
+}
+
+.pos-receipt-info-row span:first-child {
+    color: #64748b;
+}
+
+.pos-receipt-info-row span:last-child {
+    color: #111827;
+    font-weight: 700;
+}
+
+.pos-receipt-items {
+    padding: 10px 0;
+    border-bottom: 1px dashed #cbd5e1;
+}
+
+.pos-receipt-item {
+    display: grid;
+    grid-template-columns: 1fr auto auto;
+    gap: 8px;
+    align-items: center;
+    margin-bottom: 7px;
+    font-size: 10px;
+}
+
+.pos-receipt-item:last-child {
+    margin-bottom: 0;
+}
+
+.pos-receipt-item-name {
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.pos-receipt-item-qty {
+    color: #64748b;
+}
+
+.pos-receipt-item-price {
+    font-weight: 800;
+    white-space: nowrap;
+}
+
+.pos-receipt-totals {
+    padding: 10px 0;
+}
+
+.pos-receipt-total-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    margin-bottom: 6px;
+    font-size: 10px;
+}
+
+.pos-receipt-total-row.grand {
+    margin-top: 8px;
+    padding-top: 8px;
+    border-top: 1px solid #111827;
+    font-size: 14px;
+    font-weight: 900;
+}
+
+.pos-receipt-footer {
+    padding-top: 12px;
+    border-top: 1px dashed #cbd5e1;
+    text-align: center;
+}
+
+.pos-receipt-footer p {
+    margin: 3px 0;
+    color: #64748b;
+    font-size: 9px;
+}
+
+.pos-receipt-thanks {
+    color: #111827 !important;
+    font-weight: 800;
+}
+
+
+/* =========================================================
+   49. أزرار الفاتورة
+========================================================= */
+
+.pos-receipt-actions {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+    padding: 14px 16px 16px;
+}
+
+.pos-receipt-action {
+    min-height: 40px;
+    border: 1px solid var(--pos-border);
+    border-radius: 8px;
+    background: #ffffff;
+    color: var(--pos-text);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    font-size: 11px;
+    font-weight: 700;
+}
+
+.pos-receipt-action:hover {
+    background: #f8fafc;
+    border-color: var(--pos-primary);
+    color: var(--pos-primary);
+}
+
+.pos-receipt-action.primary {
+    background: var(--pos-primary);
+    border-color: var(--pos-primary);
+    color: #ffffff;
+}
+
+.pos-receipt-action.primary:hover {
+    background: var(--pos-primary-dark);
+}
+
+
+/* =========================================================
+   50. حالة التحميل
+========================================================= */
+
+.pos-loading {
+    min-height: 180px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    color: var(--pos-muted);
+    text-align: center;
+}
+
+.pos-loading-spinner {
+    width: 34px;
+    height: 34px;
+    border: 3px solid #e2e8f0;
+    border-top-color: var(--pos-primary);
+    border-radius: 50%;
+    animation: posSpin .8s linear infinite;
+}
+
+.pos-loading-text {
+    font-size: 12px;
+    font-weight: 600;
+}
+
+@keyframes posSpin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+
+/* =========================================================
+   51. حالة الخطأ
+========================================================= */
+
+.pos-error {
+    min-height: 180px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 20px;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.pos-error-icon {
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    background: #fee2e2;
+    color: var(--pos-danger);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 25px;
+}
+
+.pos-error-title {
+    color: var(--pos-dark);
+    font-size: 14px;
+    font-weight: 800;
+}
+
+.pos-error-message {
+    color: var(--pos-muted);
+    font-size: 11px;
+}
+
+.pos-retry-button {
+    min-height: 38px;
+    padding: 0 14px;
+    margin-top: 5px;
+    border: 0;
+    border-radius: 8px;
+    background: var(--pos-primary);
+    color: #ffffff;
+    cursor: pointer;
+    font-size: 11px;
+    font-weight: 700;
+}
+
+.pos-retry-button:hover {
+    background: var(--pos-primary-dark);
+}
+
+
+/* =========================================================
+   52. المنتج غير متوفر
+========================================================= */
+
+.pos-product-card.out-of-stock {
+    opacity: .62;
+}
+
+.pos-product-card.out-of-stock .pos-add-product {
+    background: #e2e8f0;
+    color: #64748b;
+    cursor: not-allowed;
+}
+
+.pos-product-card.out-of-stock .pos-add-product:hover {
+    background: #e2e8f0;
+}
+
+.pos-stock-warning {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    margin-top: 4px;
+    color: var(--pos-warning);
+    font-size: 10px;
+    font-weight: 700;
+}
+
+.pos-stock-danger {
+    color: var(--pos-danger);
+}
+
+
+/* =========================================================
+   53. الاختصارات السريعة
+========================================================= */
+
+.pos-shortcuts {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    padding: 8px 12px;
+    background: #f8fafc;
+    border-top: 1px solid var(--pos-border);
+    color: var(--pos-muted);
+    font-size: 10px;
+}
+
+.pos-shortcut {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.pos-shortcut kbd {
+    min-width: 22px;
+    height: 21px;
+    padding: 0 5px;
+    box-sizing: border-box;
+    border: 1px solid #cbd5e1;
+    border-bottom-width: 2px;
+    border-radius: 5px;
+    background: #ffffff;
+    color: var(--pos-dark);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-family: inherit;
+    font-size: 9px;
+    font-weight: 800;
+}
+
+
+/* =========================================================
+   54. منع التحديد أثناء الاستخدام
+========================================================= */
+
+.pos-app .pos-quantity-button,
+.pos-app .pos-remove-item,
+.pos-app .pos-add-product,
+.pos-app .pos-payment-button,
+.pos-app .pos-tool-button,
+.pos-app .pos-cart-action,
+.pos-app .pos-payment-method,
+.pos-app .pos-confirm-payment {
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+
+/* =========================================================
+   55. شريط التمرير
+========================================================= */
+
+.pos-app ::-webkit-scrollbar {
+    width: 7px;
+    height: 7px;
+}
+
+.pos-app ::-webkit-scrollbar-track {
+    background: #f8fafc;
+}
+
+.pos-app ::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 10px;
+}
+
+.pos-app ::-webkit-scrollbar-thumb:hover {
+    background: #94a3b8;
+}
+
+
+/* =========================================================
+   56. Responsive - الشاشات المتوسطة
+========================================================= */
+
+@media (max-width: 1100px) {
+
+    .pos-main {
+        grid-template-columns: minmax(0, 1fr) 340px;
+    }
+
+    .pos-products-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .pos-search {
+        max-width: 300px;
+    }
+}
+
+
+/* =========================================================
+   57. Responsive - الأجهزة اللوحية
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .pos-main {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .pos-cart {
+        position: relative;
+        top: auto;
+        max-height: none;
+        min-height: 400px;
+    }
+
+    .pos-products-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .pos-header {
+        flex-wrap: wrap;
+    }
+
+    .pos-search {
+        order: 3;
+        flex: 1 1 100%;
+        max-width: none;
+    }
+
+    .pos-header-actions {
+        margin-right: auto;
+    }
+}
+
+
+/* =========================================================
+   58. Responsive - الهاتف
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .pos-container {
+        padding: 8px;
+    }
+
+    .pos-header {
+        padding: 10px;
+        gap: 8px;
+    }
+
+    .pos-title {
+        width: 100%;
+    }
+
+    .pos-title-icon {
+        width: 38px;
+        height: 38px;
+        font-size: 17px;
+    }
+
+    .pos-title-content h1 {
+        font-size: 15px;
+    }
+
+    .pos-title-content span {
+        font-size: 9px;
+    }
+
+    .pos-header-actions {
+        width: 100%;
+        margin-right: 0;
+    }
+
+    .pos-header-button {
+        flex: 1;
+    }
+
+    .pos-products-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 8px;
+    }
+
+    .pos-product-card {
+        min-height: 0;
+    }
+
+    .pos-product-image,
+    .pos-product-placeholder {
+        height: 105px;
+    }
+
+    .pos-product-name {
+        font-size: 11px;
+    }
+
+    .pos-product-price {
+        font-size: 13px;
+    }
+
+    .pos-main {
+        gap: 8px;
+    }
+
+    .pos-cart-header {
+        padding: 11px 12px;
+    }
+
+    .pos-cart-item {
+        padding: 9px 12px;
+    }
+
+    .pos-payment-methods {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .pos-quick-cash {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .pos-receipt-actions {
+        grid-template-columns: 1fr;
+    }
+
+    .pos-notification-container {
+        top: 10px;
+        left: 10px;
+        width: calc(100% - 20px);
+    }
+
+    .pos-shortcuts {
+        display: none;
+    }
+}
+
+
+/* =========================================================
+   59. Responsive - الهواتف الصغيرة
+========================================================= */
+
+@media (max-width: 380px) {
+
+    .pos-products-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 6px;
+    }
+
+    .pos-product-image,
+    .pos-product-placeholder {
+        height: 90px;
+    }
+
+    .pos-product-info {
+        padding: 7px;
+    }
+
+    .pos-product-name {
+        font-size: 10px;
+    }
+
+    .pos-add-product {
+        min-height: 34px;
+        font-size: 10px;
+    }
+
+    .pos-grand-total-value {
+        font-size: 19px;
+    }
+
+    .pos-payment-dialog,
+    .pos-discount-dialog,
+    .pos-confirm-dialog,
+    .pos-success-dialog {
+        border-radius: 12px;
+    }
+}
+
+
+/* =========================================================
+   60. الطباعة
+========================================================= */
+
+@media print {
+
+    body {
+        background: #ffffff !important;
+    }
+
+    .pos-app {
+        background: #ffffff !important;
+    }
+
+    .pos-header,
+    .pos-tools,
+    .pos-barcode-box,
+    .pos-categories,
+    .pos-products-section,
+    .pos-cart-header,
+    .pos-cart-actions,
+    .pos-customer-box,
+    .pos-cashier-info,
+    .pos-payment-modal,
+    .pos-discount-modal,
+    .pos-confirm-modal,
+    .pos-success-modal,
+    .pos-notification-container,
+    .pos-shortcuts {
+        display: none !important;
+    }
+
+    .pos-main,
+    .pos-cart {
+        display: block !important;
+        width: 100% !important;
+        max-width: none !important;
+        min-height: 0 !important;
+        border: 0 !important;
+        box-shadow: none !important;
+        background: #ffffff !important;
+    }
+
+    .pos-receipt-preview {
+        display: block !important;
+        width: 80mm;
+        max-width: 80mm;
+        margin: 0 auto;
+        padding: 0;
+    }
+
+    .pos-receipt-actions {
+        display: none !important;
+    }
+
+    @page {
+        size: 80mm auto;
+        margin: 5mm;
+    }
+}
+
+
+/* =========================================================
+   61. نهاية ملف POS CSS
+========================================================= */
+
+/*
+   تم إكمال:
+   css/pos.css
+
+   الأجزاء:
+   1/4 الأساس والمنتجات والسلة
+   2/4 الكميات والإجماليات والدفع
+   3/4 الباركود والملاحظات والإشعارات
+   4/4 الفاتورة والطباعة والحالات و Responsive
+*/
