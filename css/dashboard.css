@@ -1,0 +1,3442 @@
+/* =========================================================
+   سوبر ماركت بن سليمان
+   Dashboard CSS
+   المرحلة 1 / 4
+   RTL - Arabic
+========================================================= */
+
+/* =========================================================
+   1. المتغيرات الأساسية
+========================================================= */
+
+.dashboard-app {
+    --sidebar-width: 220px;
+    --header-height: 72px;
+
+    --primary: #2563eb;
+    --primary-dark: #1d4ed8;
+
+    --success: #16a34a;
+    --warning: #f59e0b;
+    --danger: #dc2626;
+    --purple: #7c3aed;
+
+    --dark: #0f172a;
+    --text: #334155;
+    --muted: #64748b;
+
+    --background: #f1f5f9;
+    --card: #ffffff;
+    --border: #e2e8f0;
+
+    --radius: 14px;
+
+    min-height: 100vh;
+    background: var(--background);
+    direction: rtl;
+}
+
+/* =========================================================
+   2. الهيكل الرئيسي
+========================================================= */
+
+.dashboard-app * {
+    box-sizing: border-box;
+}
+
+.dashboard-app a {
+    text-decoration: none;
+}
+
+.dashboard-app button,
+.dashboard-app input,
+.dashboard-app select,
+.dashboard-app textarea {
+    font-family: inherit;
+}
+
+.dashboard-app .main-content {
+    min-height: 100vh;
+    margin-right: var(--sidebar-width);
+    padding-top: var(--header-height);
+}
+
+/* =========================================================
+   3. القائمة الجانبية Sidebar
+========================================================= */
+
+.dashboard-app .sidebar {
+    position: fixed;
+    z-index: 1000;
+
+    top: 0;
+    right: 0;
+    bottom: 0;
+
+    width: var(--sidebar-width);
+
+    display: flex;
+    flex-direction: column;
+
+    overflow: hidden;
+
+    color: #ffffff;
+
+    background:
+        linear-gradient(
+            180deg,
+            #061827 0%,
+            #0b2238 55%,
+            #071a2b 100%
+        );
+
+    border-left: 1px solid rgba(255,255,255,0.08);
+
+    box-shadow:
+        -8px 0 28px rgba(2,6,23,0.16);
+}
+
+/* =========================================================
+   رأس القائمة
+========================================================= */
+
+.sidebar-header {
+    min-height: 85px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
+
+    padding: 15px;
+}
+
+.sidebar-logo {
+    flex-shrink: 0;
+}
+
+.logo-icon {
+    width: 44px;
+    height: 44px;
+
+    display: grid;
+    place-items: center;
+
+    border-radius: 12px;
+
+    color: #ffffff;
+
+    background:
+        linear-gradient(
+            135deg,
+            #1d4ed8,
+            #0ea5e9
+        );
+
+    box-shadow:
+        0 8px 22px rgba(14,165,233,0.25);
+
+    font-size: 22px;
+}
+
+.sidebar-brand {
+    min-width: 0;
+}
+
+.sidebar-brand h1 {
+    margin: 0;
+
+    color: #ffffff;
+
+    font-size: 14px;
+    line-height: 1.5;
+
+    font-weight: 800;
+}
+
+.sidebar-brand span {
+    display: block;
+
+    margin-top: 3px;
+
+    color: rgba(255,255,255,0.55);
+
+    font-size: 9px;
+}
+
+/* =========================================================
+   الخط الفاصل
+========================================================= */
+
+.sidebar-divider {
+    height: 1px;
+
+    margin: 0 12px 8px;
+
+    background: rgba(255,255,255,0.09);
+}
+
+/* =========================================================
+   قائمة التنقل
+========================================================= */
+
+.sidebar-navigation {
+    flex: 1;
+
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    padding: 5px 9px 12px;
+
+    scrollbar-width: thin;
+
+    scrollbar-color:
+        rgba(255,255,255,0.18)
+        transparent;
+}
+
+/* =========================================================
+   عنصر القائمة
+========================================================= */
+
+.nav-item {
+    position: relative;
+
+    min-height: 37px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 7px;
+
+    margin: 2px 0;
+
+    padding: 7px 8px;
+
+    color: rgba(255,255,255,0.75);
+
+    border: 1px solid transparent;
+
+    border-radius: 9px;
+
+    transition:
+        background 0.2s ease,
+        color 0.2s ease,
+        transform 0.2s ease,
+        border-color 0.2s ease;
+}
+
+.nav-item:hover {
+    color: #ffffff;
+
+    background:
+        rgba(255,255,255,0.075);
+
+    border-color:
+        rgba(255,255,255,0.06);
+
+    transform:
+        translateX(-2px);
+}
+
+/* =========================================================
+   العنصر النشط
+========================================================= */
+
+.nav-item.active {
+    color: #ffffff;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(37,99,235,0.35),
+            rgba(22,163,74,0.16)
+        );
+
+    border-color:
+        rgba(96,165,250,0.22);
+
+    box-shadow:
+        inset -3px 0 0 #22c55e;
+}
+
+/* =========================================================
+   رقم القائمة
+========================================================= */
+
+.nav-number {
+    width: 21px;
+    height: 21px;
+
+    flex: 0 0 21px;
+
+    display: grid;
+    place-items: center;
+
+    border-radius: 6px;
+
+    color: #dbeafe;
+
+    background:
+        rgba(255,255,255,0.08);
+
+    font-size: 9px;
+    font-weight: 800;
+}
+
+.nav-item.active .nav-number {
+    color: #ffffff;
+
+    background:
+        var(--primary);
+}
+
+/* =========================================================
+   أيقونة القائمة
+========================================================= */
+
+.nav-icon {
+    width: 22px;
+
+    flex: 0 0 22px;
+
+    text-align: center;
+
+    font-size: 15px;
+
+    line-height: 1;
+}
+
+/* =========================================================
+   نص القائمة
+========================================================= */
+
+.nav-text {
+    min-width: 0;
+
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+
+    white-space: nowrap;
+
+    font-size: 10px;
+
+    font-weight: 700;
+}
+
+/* =========================================================
+   أسفل القائمة
+========================================================= */
+
+.sidebar-footer {
+    flex-shrink: 0;
+
+    padding: 11px 13px 14px;
+
+    border-top:
+        1px solid rgba(255,255,255,0.08);
+
+    background:
+        rgba(0,0,0,0.10);
+}
+
+.role-title {
+    margin-bottom: 8px;
+
+    color:
+        rgba(255,255,255,0.55);
+
+    font-size: 9px;
+
+    font-weight: 800;
+}
+
+.role-list {
+    display: grid;
+
+    gap: 6px;
+}
+
+.role-item {
+    display: flex;
+    align-items: center;
+
+    gap: 7px;
+
+    color:
+        rgba(255,255,255,0.70);
+
+    font-size: 8px;
+}
+
+.role-color {
+    width: 8px;
+    height: 8px;
+
+    flex: 0 0 8px;
+
+    border-radius: 50%;
+}
+
+.role-admin {
+    background: #2563eb;
+}
+
+.role-manager {
+    background: #16a34a;
+}
+
+.role-cashier {
+    background: #f59e0b;
+}
+
+.role-delivery {
+    background: #a855f7;
+}
+
+/* =========================================================
+   4. زر القائمة في الهاتف
+========================================================= */
+
+.mobile-menu-button {
+    width: 38px;
+    height: 38px;
+
+    display: none;
+
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid var(--border);
+
+    border-radius: 10px;
+
+    color: var(--text);
+
+    background: #ffffff;
+
+    cursor: pointer;
+
+    font-size: 18px;
+}
+
+/* =========================================================
+   طبقة الخلفية في الهاتف
+========================================================= */
+
+.sidebar-overlay {
+    position: fixed;
+
+    z-index: 990;
+
+    inset: 0;
+
+    display: none;
+
+    background:
+        rgba(2,6,23,0.55);
+
+    backdrop-filter:
+        blur(2px);
+}
+
+/* =========================================================
+   5. Header
+========================================================= */
+
+.dashboard-header {
+    position: fixed;
+
+    z-index: 900;
+
+    top: 0;
+    left: 0;
+    right: var(--sidebar-width);
+
+    height: var(--header-height);
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 15px;
+
+    padding: 10px 20px;
+
+    background:
+        rgba(255,255,255,0.95);
+
+    border-bottom:
+        1px solid var(--border);
+
+    box-shadow:
+        0 4px 18px rgba(15,23,42,0.05);
+
+    backdrop-filter:
+        blur(14px);
+}
+
+/* =========================================================
+   عنوان الهيدر
+========================================================= */
+
+.header-title {
+    min-width: 180px;
+}
+
+.header-small-title {
+    display: block;
+
+    margin-bottom: 2px;
+
+    color: #94a3b8;
+
+    font-size: 9px;
+
+    font-weight: 700;
+}
+
+.header-title h2 {
+    margin: 0;
+
+    color: var(--dark);
+
+    font-size: 18px;
+
+    line-height: 1.3;
+
+    font-weight: 900;
+}
+
+/* =========================================================
+   أزرار الهيدر
+========================================================= */
+
+.header-actions {
+    display: flex;
+
+    align-items: center;
+
+    gap: 9px;
+}
+
+/* =========================================================
+   البحث
+========================================================= */
+
+.header-search {
+    position: relative;
+
+    width: 280px;
+    height: 40px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 7px;
+
+    padding: 0 12px;
+
+    color: #94a3b8;
+
+    background: #f8fafc;
+
+    border:
+        1px solid var(--border);
+
+    border-radius: 10px;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.header-search:focus-within {
+    border-color:
+        rgba(37,99,235,0.4);
+
+    box-shadow:
+        0 0 0 3px rgba(37,99,235,0.08);
+}
+
+.header-search input {
+    width: 100%;
+
+    min-width: 0;
+
+    border: 0;
+
+    outline: 0;
+
+    color: var(--dark);
+
+    background: transparent;
+
+    font-size: 10px;
+}
+
+.header-search input::placeholder {
+    color: #94a3b8;
+}
+
+/* =========================================================
+   أزرار الهيدر
+========================================================= */
+
+.header-action-button {
+    position: relative;
+
+    width: 40px;
+    height: 40px;
+
+    display: grid;
+    place-items: center;
+
+    border:
+        1px solid var(--border);
+
+    border-radius: 10px;
+
+    color: var(--text);
+
+    background: #ffffff;
+
+    cursor: pointer;
+
+    transition:
+        all 0.2s ease;
+}
+
+.header-action-button:hover {
+    color: var(--primary);
+
+    border-color:
+        #bfdbfe;
+
+    background:
+        #eff6ff;
+}
+
+/* =========================================================
+   رقم الإشعارات
+========================================================= */
+
+.notification-badge {
+    position: absolute;
+
+    top: -4px;
+    right: -4px;
+
+    min-width: 17px;
+    height: 17px;
+
+    display: grid;
+    place-items: center;
+
+    padding: 0 4px;
+
+    border:
+        2px solid #ffffff;
+
+    border-radius: 20px;
+
+    color: #ffffff;
+
+    background:
+        var(--danger);
+
+    font-size: 8px;
+
+    font-weight: 800;
+}
+
+/* =========================================================
+   المستخدم
+========================================================= */
+
+.header-user {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+
+    gap: 8px;
+
+    min-width: 150px;
+
+    padding: 4px 7px 4px 4px;
+
+    border:
+        1px solid var(--border);
+
+    border-radius: 12px;
+
+    background: #ffffff;
+}
+
+.user-avatar {
+    width: 34px;
+    height: 34px;
+
+    flex: 0 0 34px;
+
+    display: grid;
+    place-items: center;
+
+    border-radius: 10px;
+
+    color: #ffffff;
+
+    background:
+        linear-gradient(
+            135deg,
+            #0f172a,
+            #334155
+        );
+
+    font-size: 14px;
+}
+
+.user-info {
+    min-width: 0;
+
+    flex: 1;
+}
+
+.user-info strong {
+    display: block;
+
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+
+    white-space: nowrap;
+
+    color: var(--dark);
+
+    font-size: 9px;
+
+    font-weight: 800;
+}
+
+.user-info span {
+    display: block;
+
+    margin-top: 2px;
+
+    color: #94a3b8;
+
+    font-size: 7px;
+}
+
+.user-menu-button {
+    width: 26px;
+    height: 26px;
+
+    display: grid;
+    place-items: center;
+
+    border: 0;
+
+    border-radius: 8px;
+
+    color: var(--muted);
+
+    background: transparent;
+
+    cursor: pointer;
+}
+
+.user-menu-button:hover {
+    color: var(--primary);
+
+    background: #eff6ff;
+}
+
+/* =========================================================
+   6. القائمة المنسدلة للمستخدم
+========================================================= */
+
+.user-dropdown {
+    position: absolute;
+
+    z-index: 1100;
+
+    top: calc(100% + 9px);
+
+    left: 0;
+
+    width: 205px;
+
+    display: none;
+
+    padding: 8px;
+
+    border:
+        1px solid var(--border);
+
+    border-radius: 12px;
+
+    background: #ffffff;
+
+    box-shadow:
+        0 18px 45px rgba(15,23,42,0.14);
+}
+
+.header-user.open .user-dropdown,
+.user-dropdown.open {
+    display: block;
+}
+
+.user-dropdown-header {
+    padding: 9px;
+
+    color: var(--dark);
+}
+
+.user-dropdown-header strong {
+    display: block;
+
+    font-size: 10px;
+}
+
+.user-dropdown-header span {
+    display: block;
+
+    margin-top: 3px;
+
+    color: #94a3b8;
+
+    font-size: 8px;
+}
+
+.user-dropdown-divider {
+    height: 1px;
+
+    margin: 5px 0;
+
+    background:
+        var(--border);
+}
+
+.user-dropdown-item {
+    display: flex;
+    align-items: center;
+
+    gap: 7px;
+
+    padding: 9px;
+
+    border-radius: 8px;
+
+    color: #475569;
+
+    font-size: 9px;
+
+    cursor: pointer;
+}
+
+.user-dropdown-item:hover {
+    color: var(--dark);
+
+    background:
+        #f8fafc;
+}
+
+.user-dropdown-item.logout-item {
+    color: var(--danger);
+      }
+
+/*
+=========================================================
+  BEN SULEIMAN SUPERMARKET
+  DASHBOARD STYLES
+  Version 1.0.0
+  RTL / Arabic dashboard
+=========================================================
+*/
+
+/* =====================================================
+   1. DASHBOARD VARIABLES
+===================================================== */
+
+.dashboard-app {
+    --dashboard-sidebar-width: 220px;
+    --dashboard-header-height: 76px;
+    --dashboard-gap: 18px;
+    --dashboard-card-radius: 14px;
+    --dashboard-soft: #f8fafc;
+    --dashboard-border: #e2e8f0;
+    --dashboard-muted: #64748b;
+    --dashboard-dark: #0f172a;
+    --dashboard-green: #16a34a;
+    --dashboard-blue: #2563eb;
+    --dashboard-purple: #7c3aed;
+    --dashboard-orange: #f59e0b;
+    --dashboard-red: #dc2626;
+}
+
+/* =====================================================
+   2. APPLICATION LAYOUT
+===================================================== */
+
+.dashboard-app {
+    min-height: 100vh;
+
+    background:
+        radial-gradient(
+            circle at 90% 0%,
+            rgba(37,99,235,.035),
+            transparent 26%
+        ),
+        #f1f5f9;
+}
+
+.dashboard-app .main-content {
+    min-height: 100vh;
+
+    margin-left:
+        var(--dashboard-sidebar-width);
+
+    padding-top:
+        var(--dashboard-header-height);
+}
+
+/* =====================================================
+   3. SIDEBAR
+===================================================== */
+
+.dashboard-app .sidebar {
+    position: fixed;
+
+    z-index: 1000;
+
+    top: 0;
+    bottom: 0;
+    left: 0;
+
+    width:
+        var(--dashboard-sidebar-width);
+
+    display: flex;
+    flex-direction: column;
+
+    overflow: hidden;
+
+    color: #fff;
+
+    background:
+        linear-gradient(
+            180deg,
+            #071a2b 0%,
+            #0b2238 55%,
+            #061827 100%
+        );
+
+    border-right:
+        1px solid rgba(255,255,255,.08);
+
+    box-shadow:
+        8px 0 28px rgba(2,6,23,.16);
+}
+
+/* =====================================================
+   SIDEBAR HEADER
+===================================================== */
+
+.sidebar-header {
+    min-height: 86px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
+
+    padding: 16px 14px;
+}
+
+.sidebar-logo {
+    flex: 0 0 auto;
+}
+
+.logo-icon {
+    width: 45px;
+    height: 45px;
+
+    display: grid;
+    place-items: center;
+
+    border-radius: 12px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #1d4ed8,
+            #0ea5e9
+        );
+
+    box-shadow:
+        0 8px 22px
+        rgba(14,165,233,.25);
+
+    font-size: 24px;
+}
+
+.sidebar-brand {
+    min-width: 0;
+}
+
+.sidebar-brand h1 {
+    margin: 0;
+
+    color: #fff;
+
+    font-size: 14px;
+
+    line-height: 1.45;
+
+    font-weight: 800;
+}
+
+.sidebar-brand span {
+    display: block;
+
+    margin-top: 3px;
+
+    color:
+        rgba(255,255,255,.58);
+
+    font-size: 10px;
+}
+
+/* =====================================================
+   SIDEBAR DIVIDER
+===================================================== */
+
+.sidebar-divider {
+    height: 1px;
+
+    margin:
+        0 12px 8px;
+
+    background:
+        rgba(255,255,255,.09);
+}
+
+/* =====================================================
+   SIDEBAR NAVIGATION
+===================================================== */
+
+.sidebar-navigation {
+    flex: 1;
+
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    padding:
+        4px 9px 12px;
+
+    scrollbar-width: thin;
+
+    scrollbar-color:
+        rgba(255,255,255,.18)
+        transparent;
+}
+
+/* =====================================================
+   NAV ITEM
+===================================================== */
+
+.nav-item {
+    position: relative;
+
+    min-height: 36px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 7px;
+
+    margin: 2px 0;
+
+    padding: 6px 7px;
+
+    color:
+        rgba(255,255,255,.76);
+
+    border:
+        1px solid transparent;
+
+    border-radius: 9px;
+
+    transition:
+        transform .2s ease,
+        background .2s ease,
+        color .2s ease,
+        border-color .2s ease;
+}
+
+.nav-item:hover {
+    color: #fff;
+
+    background:
+        rgba(255,255,255,.075);
+
+    border-color:
+        rgba(255,255,255,.06);
+
+    transform:
+        translateX(2px);
+}
+
+/* =====================================================
+   ACTIVE NAV ITEM
+===================================================== */
+
+.nav-item.active {
+    color: #fff;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(37,99,235,.35),
+            rgba(22,163,74,.16)
+        );
+
+    border-color:
+        rgba(96,165,250,.22);
+
+    box-shadow:
+        inset 3px 0 0 #22c55e;
+}
+
+/* =====================================================
+   NAV NUMBER
+===================================================== */
+
+.nav-number {
+    width: 21px;
+    height: 21px;
+
+    flex: 0 0 21px;
+
+    display: grid;
+    place-items: center;
+
+    border-radius: 6px;
+
+    color: #dbeafe;
+
+    background:
+        rgba(255,255,255,.08);
+
+    font-size: 9px;
+
+    font-weight: 800;
+}
+
+.nav-item.active .nav-number {
+    color: #fff;
+
+    background:
+        #2563eb;
+}
+
+/* =====================================================
+   NAV ICON
+===================================================== */
+
+.nav-icon {
+    width: 22px;
+
+    text-align: center;
+
+    font-size: 15px;
+
+    line-height: 1;
+}
+
+/* =====================================================
+   NAV TEXT
+===================================================== */
+
+.nav-text {
+    min-width: 0;
+
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+
+    white-space: nowrap;
+
+    font-size: 11px;
+
+    font-weight: 700;
+}
+
+/* =====================================================
+   SIDEBAR FOOTER
+===================================================== */
+
+.sidebar-footer {
+    flex-shrink: 0;
+
+    padding:
+        11px 13px 14px;
+
+    border-top:
+        1px solid rgba(255,255,255,.08);
+
+    background:
+        rgba(0,0,0,.10);
+}
+
+.role-title {
+    margin-bottom: 8px;
+
+    color:
+        rgba(255,255,255,.55);
+
+    font-size: 9px;
+
+    font-weight: 800;
+}
+
+.role-list {
+    display: grid;
+
+    gap: 6px;
+}
+
+.role-item {
+    display: flex;
+    align-items: center;
+
+    gap: 7px;
+
+    color:
+        rgba(255,255,255,.70);
+
+    font-size: 8px;
+}
+
+.role-color {
+    width: 8px;
+    height: 8px;
+
+    flex: 0 0 8px;
+
+    border-radius: 50%;
+}
+
+.role-admin {
+    background: #2563eb;
+}
+
+.role-manager {
+    background: #16a34a;
+}
+
+.role-cashier {
+    background: #f59e0b;
+}
+
+.role-delivery {
+    background: #a855f7;
+}
+
+/* =====================================================
+   4. MOBILE MENU
+===================================================== */
+
+.mobile-menu-button {
+    width: 38px;
+    height: 38px;
+
+    display: none;
+
+    align-items: center;
+    justify-content: center;
+
+    border:
+        1px solid #e2e8f0;
+
+    border-radius: 10px;
+
+    color: #334155;
+
+    background: #fff;
+
+    cursor: pointer;
+
+    font-size: 18px;
+}
+
+.sidebar-overlay {
+    position: fixed;
+
+    z-index: 990;
+
+    inset: 0;
+
+    display: none;
+
+    background:
+        rgba(2,6,23,.55);
+
+    backdrop-filter:
+        blur(2px);
+}
+
+/* =====================================================
+   5. DASHBOARD HEADER
+===================================================== */
+
+.dashboard-header {
+    position: fixed;
+
+    z-index: 900;
+
+    top: 0;
+
+    left: 0;
+
+    right:
+        var(--dashboard-sidebar-width);
+
+    height:
+        var(--dashboard-header-height);
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 15px;
+
+    padding:
+        10px 20px;
+
+    background:
+        rgba(255,255,255,.95);
+
+    border-bottom:
+        1px solid var(--dashboard-border);
+
+    box-shadow:
+        0 4px 18px
+        rgba(15,23,42,.05);
+
+    backdrop-filter:
+        blur(14px);
+}
+
+/* =====================================================
+   HEADER TITLE
+===================================================== */
+
+.header-title {
+    min-width: 180px;
+}
+
+.header-small-title {
+    display: block;
+
+    margin-bottom: 2px;
+
+    color: #94a3b8;
+
+    font-size: 10px;
+
+    font-weight: 700;
+}
+
+.header-title h2 {
+    margin: 0;
+
+    color: #0f172a;
+
+    font-size: 19px;
+
+    line-height: 1.25;
+
+    font-weight: 850;
+}
+
+/* =====================================================
+   HEADER ACTIONS
+===================================================== */
+
+.header-actions {
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+}
+
+/* =====================================================
+   HEADER SEARCH
+===================================================== */
+
+.header-search {
+    width:
+        min(290px, 28vw);
+
+    height: 40px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 7px;
+
+    padding:
+        0 12px;
+
+    color: #94a3b8;
+
+    background: #f8fafc;
+
+    border:
+        1px solid #e2e8f0;
+
+    border-radius: 10px;
+}
+
+.header-search:focus-within {
+    border-color:
+        rgba(37,99,235,.4);
+
+    box-shadow:
+        0 0 0 3px
+        rgba(37,99,235,.08);
+}
+
+.header-search input {
+    width: 100%;
+
+    min-width: 0;
+
+    border: 0;
+
+    outline: 0;
+
+    background: transparent;
+
+    color: #0f172a;
+
+    font: inherit;
+
+    font-size: 11px;
+}
+
+.header-search input::placeholder {
+    color: #94a3b8;
+}
+
+/* =====================================================
+   HEADER BUTTONS
+===================================================== */
+
+.header-action-button,
+.user-menu-button {
+    position: relative;
+
+    width: 40px;
+    height: 40px;
+
+    display: grid;
+
+    place-items: center;
+
+    border:
+        1px solid #e2e8f0;
+
+    border-radius: 10px;
+
+    background: #fff;
+
+    color: #334155;
+
+    cursor: pointer;
+
+    transition:
+        all .2s ease;
+}
+
+.header-action-button:hover,
+.user-menu-button:hover {
+    color: #2563eb;
+
+    border-color:
+        #bfdbfe;
+
+    background:
+        #eff6ff;
+}
+
+/* =====================================================
+   NOTIFICATION BADGE
+===================================================== */
+
+.notification-badge {
+    position: absolute;
+
+    top: -4px;
+
+    right: -4px;
+
+    min-width: 17px;
+
+    height: 17px;
+
+    display: grid;
+
+    place-items: center;
+
+    padding:
+        0 4px;
+
+    border:
+        2px solid #fff;
+
+    border-radius: 20px;
+
+    color: #fff;
+
+    background:
+        #dc2626;
+
+    font-size: 8px;
+
+    font-weight: 800;
+}
+
+/* =====================================================
+   HEADER USER
+===================================================== */
+
+.header-user {
+    position: relative;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    min-width: 150px;
+
+    padding:
+        4px 7px 4px 4px;
+
+    border:
+        1px solid #e2e8f0;
+
+    border-radius: 12px;
+
+    background: #fff;
+}
+
+.user-avatar {
+    width: 34px;
+    height: 34px;
+
+    display: grid;
+
+    place-items: center;
+
+    flex: 0 0 34px;
+
+    border-radius: 10px;
+
+    color: #fff;
+
+    background:
+        linear-gradient(
+            135deg,
+            #0f172a,
+            #334155
+        );
+
+    font-size: 15px;
+}
+
+.user-info {
+    min-width: 0;
+
+    flex: 1;
+}
+
+.user-info strong {
+    display: block;
+
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+
+    white-space: nowrap;
+
+    color: #0f172a;
+
+    font-size: 10px;
+
+    font-weight: 800;
+}
+
+.user-info span {
+    display: block;
+
+    margin-top: 2px;
+
+    color: #94a3b8;
+
+    font-size: 8px;
+}
+
+.user-menu-button {
+    width: 25px;
+
+    height: 25px;
+
+    border: 0;
+
+    background: transparent;
+}
+
+/* =====================================================
+   6. USER DROPDOWN
+===================================================== */
+
+.user-dropdown {
+    position: absolute;
+
+    top:
+        calc(100% + 9px);
+
+    right: 0;
+
+    z-index: 1100;
+
+    width: 205px;
+
+    padding: 8px;
+
+    display: none;
+
+    border:
+        1px solid #e2e8f0;
+
+    border-radius: 12px;
+
+    background: #fff;
+
+    box-shadow:
+        0 18px 45px
+        rgba(15,23,42,.14);
+}
+
+.header-user.open .user-dropdown,
+.user-dropdown.open {
+    display: block;
+}
+
+.user-dropdown-header {
+    padding: 9px;
+
+    color: #0f172a;
+}
+
+.user-dropdown-header strong {
+    display: block;
+
+    font-size: 11px;
+}
+
+.user-dropdown-header span {
+    display: block;
+
+    margin-top: 3px;
+
+    color: #94a3b8;
+
+    font-size: 9px;
+}
+
+.user-dropdown-divider {
+    height: 1px;
+
+    margin: 5px 0;
+
+    background:
+        #e2e8f0;
+}
+
+.user-dropdown-item {
+    display: flex;
+
+    align-items: center;
+
+    gap: 7px;
+
+    padding: 9px;
+
+    border-radius: 8px;
+
+    color: #475569;
+
+    font-size: 10px;
+
+    cursor: pointer;
+}
+
+.user-dropdown-item:hover {
+    color: #0f172a;
+
+    background:
+        #f8fafc;
+}
+
+.user-dropdown-item.logout-item {
+    color: #dc2626;
+}
+
+/* =========================================================
+   سوبر ماركت بن سليمان
+   Dashboard CSS
+   المرحلة 3 / 4
+   محتوى لوحة التحكم والإحصائيات
+========================================================= */
+
+/* =========================
+   محتوى لوحة التحكم
+========================= */
+
+.dashboard-content {
+    padding: 24px;
+    margin-top: var(--dashboard-header-height);
+    min-height: calc(100vh - var(--dashboard-header-height));
+}
+
+.dashboard-page-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    margin-bottom: 24px;
+}
+
+.dashboard-page-header h1,
+.dashboard-page-header h2 {
+    margin: 0;
+    color: var(--dashboard-dark);
+    font-size: 25px;
+    font-weight: 800;
+}
+
+.dashboard-page-header p {
+    margin: 6px 0 0;
+    color: var(--dashboard-muted);
+    font-size: 14px;
+}
+
+.dashboard-date {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 14px;
+    background: var(--dashboard-card);
+    border: 1px solid var(--dashboard-border);
+    border-radius: 10px;
+    color: var(--dashboard-muted);
+    font-size: 13px;
+    box-shadow: var(--dashboard-shadow);
+}
+
+.date-icon {
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    background: #eff6ff;
+    color: var(--dashboard-primary);
+}
+
+/* =========================
+   شبكة الإحصائيات
+========================= */
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 18px;
+    margin-bottom: 22px;
+}
+
+.stat-card {
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    min-height: 128px;
+    padding: 20px;
+    background: var(--dashboard-card);
+    border: 1px solid var(--dashboard-border);
+    border-radius: var(--dashboard-radius);
+    box-shadow: var(--dashboard-shadow);
+    transition: transform 0.2s ease,
+                box-shadow 0.2s ease;
+}
+
+.stat-card:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--dashboard-shadow-hover);
+}
+
+.stat-card::after {
+    content: "";
+    position: absolute;
+    width: 90px;
+    height: 90px;
+    left: -35px;
+    bottom: -35px;
+    border-radius: 50%;
+    background: rgba(37, 99, 235, 0.05);
+}
+
+.stat-card-content {
+    flex: 1;
+    min-width: 0;
+}
+
+.stat-card-icon {
+    width: 54px;
+    height: 54px;
+    flex: 0 0 54px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 16px;
+    border-radius: 14px;
+    font-size: 23px;
+    background: #eff6ff;
+    color: var(--dashboard-primary);
+}
+
+.stat-card:nth-child(2) .stat-card-icon {
+    background: #f0fdf4;
+    color: var(--dashboard-success);
+}
+
+.stat-card:nth-child(3) .stat-card-icon {
+    background: #fff7ed;
+    color: var(--dashboard-warning);
+}
+
+.stat-card:nth-child(4) .stat-card-icon {
+    background: #faf5ff;
+    color: var(--dashboard-purple);
+}
+
+.stat-label {
+    display: block;
+    margin-bottom: 7px;
+    color: var(--dashboard-muted);
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.stat-value {
+    display: inline-block;
+    color: var(--dashboard-dark);
+    font-size: 25px;
+    line-height: 1.2;
+    font-weight: 800;
+}
+
+.stat-currency {
+    margin-right: 5px;
+    color: var(--dashboard-muted);
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.stat-change {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    margin-top: 7px;
+    font-size: 11px;
+    font-weight: 700;
+}
+
+.stat-change.up {
+    color: var(--dashboard-success);
+}
+
+.stat-change.down {
+    color: var(--dashboard-danger);
+}
+
+.stat-change.neutral {
+    color: var(--dashboard-muted);
+}
+
+/* =========================
+   الشبكة الرئيسية
+========================= */
+
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.dashboard-card {
+    min-width: 0;
+    background: var(--dashboard-card);
+    border: 1px solid var(--dashboard-border);
+    border-radius: var(--dashboard-radius);
+    box-shadow: var(--dashboard-shadow);
+    overflow: hidden;
+}
+
+.card-header {
+    min-height: 62px;
+    padding: 16px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    border-bottom: 1px solid var(--dashboard-border);
+}
+
+.card-header h3,
+.card-header h4 {
+    margin: 0;
+    color: var(--dashboard-dark);
+    font-size: 16px;
+    font-weight: 800;
+}
+
+.card-header p {
+    margin: 4px 0 0;
+    color: var(--dashboard-muted);
+    font-size: 12px;
+}
+
+.card-menu-button {
+    width: 34px;
+    height: 34px;
+    border: 0;
+    border-radius: 8px;
+    background: transparent;
+    color: var(--dashboard-muted);
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.card-menu-button:hover {
+    background: #f1f5f9;
+    color: var(--dashboard-dark);
+}
+
+.card-select {
+    min-width: 110px;
+    padding: 8px 10px;
+    border: 1px solid var(--dashboard-border);
+    border-radius: 8px;
+    background: #fff;
+    color: var(--dashboard-text);
+    font-size: 12px;
+    outline: none;
+}
+
+.card-select:focus {
+    border-color: var(--dashboard-primary);
+}
+
+/* =========================
+   الإجراءات السريعة
+========================= */
+
+.quick-actions-card {
+    grid-column: span 4;
+}
+
+.quick-actions {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    padding: 18px;
+}
+
+.quick-action {
+    min-height: 88px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 12px 8px;
+    border: 1px solid var(--dashboard-border);
+    border-radius: 12px;
+    background: #fff;
+    color: var(--dashboard-text);
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.quick-action:hover {
+    transform: translateY(-2px);
+    border-color: #cbd5e1;
+    box-shadow: 0 5px 15px rgba(15, 23, 42, 0.06);
+}
+
+.quick-action-icon {
+    width: 38px;
+    height: 38px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    font-size: 17px;
+}
+
+.quick-action span:last-child {
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.action-blue .quick-action-icon {
+    background: #eff6ff;
+    color: #2563eb;
+}
+
+.action-cyan .quick-action-icon {
+    background: #ecfeff;
+    color: #0891b2;
+}
+
+.action-green .quick-action-icon {
+    background: #f0fdf4;
+    color: #16a34a;
+}
+
+.action-orange .quick-action-icon {
+    background: #fff7ed;
+    color: #ea580c;
+}
+
+.action-purple .quick-action-icon {
+    background: #faf5ff;
+    color: #7c3aed;
+}
+
+.action-red .quick-action-icon {
+    background: #fef2f2;
+    color: #dc2626;
+}
+
+/* =========================
+   الرسم البياني
+========================= */
+
+.sales-chart-card {
+    grid-column: span 8;
+}
+
+.sales-chart {
+    padding: 18px 20px 20px;
+}
+
+.chart-wrapper {
+    position: relative;
+    height: 270px;
+    padding-right: 42px;
+    padding-bottom: 32px;
+}
+
+.chart-grid-lines {
+    position: absolute;
+    top: 10px;
+    right: 42px;
+    left: 0;
+    bottom: 32px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    pointer-events: none;
+}
+
+.chart-grid-lines span {
+    display: block;
+    width: 100%;
+    border-top: 1px dashed #e2e8f0;
+}
+
+.chart-line {
+    position: absolute;
+    top: 10px;
+    right: 42px;
+    left: 0;
+    bottom: 32px;
+    overflow: hidden;
+}
+
+.chart-line svg {
+    width: 100%;
+    height: 100%;
+    display: block;
+    overflow: visible;
+}
+
+.chart-line path {
+    fill: none;
+    stroke: var(--dashboard-primary);
+    stroke-width: 3;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.chart-line .area {
+    fill: rgba(37, 99, 235, 0.08);
+    stroke: none;
+}
+
+.chart-point {
+    width: 9px;
+    height: 9px;
+    position: absolute;
+    transform: translate(-50%, 50%);
+    border: 2px solid #fff;
+    border-radius: 50%;
+    background: var(--dashboard-primary);
+    box-shadow: 0 2px 6px rgba(37, 99, 235, 0.25);
+}
+
+.chart-y-axis {
+    position: absolute;
+    top: 8px;
+    right: 0;
+    bottom: 30px;
+    width: 35px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    color: var(--dashboard-muted);
+    font-size: 10px;
+    text-align: right;
+}
+
+.chart-days {
+    position: absolute;
+    right: 42px;
+    left: 0;
+    bottom: 0;
+    height: 25px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    color: var(--dashboard-muted);
+    font-size: 10px;
+}
+
+.chart-legend {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-top: 4px;
+    color: var(--dashboard-muted);
+    font-size: 11px;
+}
+
+.chart-legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.chart-legend-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--dashboard-primary);
+}
+
+/* =========================
+   المنتجات الأكثر مبيعاً
+========================= */
+
+.top-products-card {
+    grid-column: span 4;
+}
+
+.products-list {
+    padding: 8px 18px 14px;
+}
+
+.top-product {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 13px 0;
+    border-bottom: 1px solid #f1f5f9;
+}
+
+.top-product:last-child {
+    border-bottom: 0;
+}
+
+.product-rank {
+    width: 25px;
+    height: 25px;
+    flex: 0 0 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 7px;
+    background: #f1f5f9;
+    color: var(--dashboard-muted);
+    font-size: 11px;
+    font-weight: 800;
+}
+
+.top-product:first-child .product-rank {
+    background: #fef3c7;
+    color: #b45309;
+}
+
+.product-image {
+    width: 42px;
+    height: 42px;
+    flex: 0 0 42px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    border-radius: 9px;
+    background: #f8fafc;
+    color: var(--dashboard-muted);
+}
+
+.product-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.product-details {
+    flex: 1;
+    min-width: 0;
+}
+
+.product-details strong {
+    display: block;
+    overflow: hidden;
+    color: var(--dashboard-dark);
+    font-size: 12px;
+    font-weight: 700;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.product-details small {
+    display: block;
+    margin-top: 4px;
+    color: var(--dashboard-muted);
+    font-size: 10px;
+}
+
+.product-sales {
+    color: var(--dashboard-primary);
+    font-size: 11px;
+    font-weight: 800;
+    white-space: nowrap;
+}
+
+/* =========================
+   المخزون
+========================= */
+
+.inventory-card {
+    grid-column: span 8;
+}
+
+.inventory-table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+}
+
+.dashboard-table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 620px;
+}
+
+.dashboard-table th {
+    padding: 12px 18px;
+    background: #f8fafc;
+    color: var(--dashboard-muted);
+    font-size: 11px;
+    font-weight: 700;
+    text-align: right;
+    white-space: nowrap;
+}
+
+.dashboard-table td {
+    padding: 14px 18px;
+    border-top: 1px solid #f1f5f9;
+    color: var(--dashboard-text);
+    font-size: 12px;
+    vertical-align: middle;
+}
+
+.dashboard-table tr:hover td {
+    background: #fafcff;
+}
+
+.table-responsive {
+    width: 100%;
+    overflow-x: auto;
+}
+
+.inventory-progress {
+    width: 100px;
+    height: 6px;
+    overflow: hidden;
+    border-radius: 10px;
+    background: #e2e8f0;
+}
+
+.inventory-progress span {
+    display: block;
+    height: 100%;
+    border-radius: inherit;
+    background: var(--dashboard-success);
+}
+
+.inventory-progress.warning span {
+    background: var(--dashboard-warning);
+}
+
+.inventory-progress.danger span {
+    background: var(--dashboard-danger);
+}
+
+/* =========================
+   حالات عامة
+========================= */
+
+.empty-state {
+    padding: 35px 20px;
+    color: var(--dashboard-muted);
+    text-align: center;
+}
+
+.empty-state-icon {
+    width: 50px;
+    height: 50px;
+    margin: 0 auto 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: #f1f5f9;
+    font-size: 20px;
+}
+
+.empty-state-title {
+    margin: 0 0 5px;
+    color: var(--dashboard-dark);
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.empty-state-text {
+    margin: 0;
+    font-size: 12px;
+  }
+
+/* =========================================================
+   سوبر ماركت بن سليمان
+   Dashboard CSS
+   المرحلة 4 / 4
+   الطلبات - المبيعات - التوصيل - التنبيهات - التجاوب
+========================================================= */
+
+/* =========================
+   الطلبات
+========================= */
+
+.orders-card {
+    grid-column: span 4;
+}
+
+.orders-list {
+    padding: 8px 18px 14px;
+}
+
+.order {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 13px 0;
+    border-bottom: 1px solid #f1f5f9;
+}
+
+.order:last-child {
+    border-bottom: 0;
+}
+
+.order-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.order-info strong {
+    display: block;
+    color: var(--dashboard-dark);
+    font-size: 12px;
+    font-weight: 800;
+}
+
+.order-info small {
+    display: block;
+    margin-top: 4px;
+    color: var(--dashboard-muted);
+    font-size: 10px;
+}
+
+.order-status {
+    flex: 0 0 auto;
+}
+
+.order-status-icon {
+    width: 34px;
+    height: 34px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 9px;
+    background: #eff6ff;
+    color: var(--dashboard-primary);
+    font-size: 13px;
+}
+
+.order-status-summary {
+    padding: 15px 18px;
+    background: #f8fafc;
+    border-top: 1px solid var(--dashboard-border);
+}
+
+.order-status-summary strong {
+    color: var(--dashboard-dark);
+    font-size: 12px;
+}
+
+.order-status-summary span {
+    margin-right: 6px;
+    color: var(--dashboard-muted);
+    font-size: 11px;
+}
+
+/* =========================
+   شارات الحالة
+========================= */
+
+.status-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 70px;
+    padding: 5px 9px;
+    border-radius: 20px;
+    font-size: 10px;
+    font-weight: 800;
+    white-space: nowrap;
+}
+
+.status-paid {
+    background: #dcfce7;
+    color: #15803d;
+}
+
+.status-processing {
+    background: #dbeafe;
+    color: #1d4ed8;
+}
+
+.status-warning {
+    background: #fef3c7;
+    color: #b45309;
+}
+
+.status-danger {
+    background: #fee2e2;
+    color: #b91c1c;
+}
+
+.status-pending {
+    background: #f1f5f9;
+    color: #475569;
+}
+
+.status-success {
+    background: #dcfce7;
+    color: #15803d;
+}
+
+/* =========================
+   المبيعات الأخيرة
+========================= */
+
+.recent-sales-card {
+    grid-column: span 8;
+}
+
+.recent-sales-table {
+    width: 100%;
+    overflow-x: auto;
+}
+
+.recent-sales-table table {
+    width: 100%;
+    min-width: 650px;
+    border-collapse: collapse;
+}
+
+.recent-sales-table th {
+    padding: 12px 18px;
+    background: #f8fafc;
+    color: var(--dashboard-muted);
+    font-size: 11px;
+    font-weight: 700;
+    text-align: right;
+    white-space: nowrap;
+}
+
+.recent-sales-table td {
+    padding: 14px 18px;
+    border-top: 1px solid #f1f5f9;
+    color: var(--dashboard-text);
+    font-size: 12px;
+}
+
+.recent-sales-table tbody tr {
+    transition: background 0.15s ease;
+}
+
+.recent-sales-table tbody tr:hover {
+    background: #fafcff;
+}
+
+.sale-customer {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+}
+
+.sale-customer-avatar {
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: #eff6ff;
+    color: var(--dashboard-primary);
+    font-size: 11px;
+    font-weight: 800;
+}
+
+.sale-customer-name {
+    color: var(--dashboard-dark);
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.sale-customer-phone {
+    display: block;
+    margin-top: 3px;
+    color: var(--dashboard-muted);
+    font-size: 9px;
+}
+
+.sale-total {
+    color: var(--dashboard-dark);
+    font-weight: 800;
+    white-space: nowrap;
+}
+
+/* =========================
+   المشتريات
+========================= */
+
+.purchases-card {
+    grid-column: span 6;
+}
+
+.purchase-list {
+    padding: 8px 18px 14px;
+}
+
+.purchase-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 13px 0;
+    border-bottom: 1px solid #f1f5f9;
+}
+
+.purchase-item:last-child {
+    border-bottom: 0;
+}
+
+.purchase-info {
+    min-width: 0;
+}
+
+.purchase-info strong {
+    display: block;
+    overflow: hidden;
+    color: var(--dashboard-dark);
+    font-size: 12px;
+    font-weight: 700;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.purchase-info small {
+    display: block;
+    margin-top: 4px;
+    color: var(--dashboard-muted);
+    font-size: 10px;
+}
+
+.purchase-value {
+    color: var(--dashboard-danger);
+    font-size: 12px;
+    font-weight: 800;
+    white-space: nowrap;
+}
+
+/* =========================
+   الموردون
+========================= */
+
+.suppliers-card {
+    grid-column: span 6;
+}
+
+.suppliers-list {
+    padding: 8px 18px 14px;
+}
+
+.supplier-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 13px 0;
+    border-bottom: 1px solid #f1f5f9;
+}
+
+.supplier-item:last-child {
+    border-bottom: 0;
+}
+
+.supplier-avatar {
+    width: 38px;
+    height: 38px;
+    flex: 0 0 38px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    background: #f1f5f9;
+    color: var(--dashboard-muted);
+    font-size: 14px;
+    font-weight: 800;
+}
+
+.supplier-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.supplier-info strong {
+    display: block;
+    color: var(--dashboard-dark);
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.supplier-info small {
+    display: block;
+    margin-top: 3px;
+    color: var(--dashboard-muted);
+    font-size: 10px;
+}
+
+.supplier-balance {
+    color: var(--dashboard-danger);
+    font-size: 11px;
+    font-weight: 800;
+}
+
+/* =========================
+   المرتجعات
+========================= */
+
+.returns-card {
+    grid-column: span 4;
+}
+
+.returns-summary {
+    padding: 20px;
+}
+
+.return-total {
+    margin-bottom: 18px;
+}
+
+.return-total-label {
+    display: block;
+    margin-bottom: 5px;
+    color: var(--dashboard-muted);
+    font-size: 11px;
+}
+
+.return-total-value {
+    color: var(--dashboard-danger);
+    font-size: 25px;
+    font-weight: 800;
+}
+
+.return-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    padding: 11px 0;
+    border-bottom: 1px solid #f1f5f9;
+}
+
+.return-row:last-child {
+    border-bottom: 0;
+}
+
+.return-row span {
+    color: var(--dashboard-muted);
+    font-size: 11px;
+}
+
+.return-row strong {
+    color: var(--dashboard-dark);
+    font-size: 12px;
+}
+
+/* =========================
+   العملاء
+========================= */
+
+.customers-card {
+    grid-column: span 4;
+}
+
+.customer-summary {
+    padding: 20px;
+}
+
+.customer-total {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 20px;
+}
+
+.customer-total-icon {
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    background: #eff6ff;
+    color: var(--dashboard-primary);
+    font-size: 19px;
+}
+
+.customer-total-value {
+    color: var(--dashboard-dark);
+    font-size: 24px;
+    font-weight: 800;
+}
+
+.customer-total-label {
+    display: block;
+    margin-top: 3px;
+    color: var(--dashboard-muted);
+    font-size: 10px;
+}
+
+.customer-stat-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 1px solid #f1f5f9;
+}
+
+.customer-stat-row:last-child {
+    border-bottom: 0;
+}
+
+.customer-stat-row span {
+    color: var(--dashboard-muted);
+    font-size: 11px;
+}
+
+.customer-stat-row strong {
+    color: var(--dashboard-dark);
+    font-size: 11px;
+}
+
+/* =========================
+   التوصيل
+========================= */
+
+.delivery-card {
+    grid-column: span 8;
+}
+
+.delivery-map {
+    position: relative;
+    min-height: 270px;
+    overflow: hidden;
+    background:
+        linear-gradient(90deg, transparent 48%, #e2e8f0 49%, #e2e8f0 51%, transparent 52%),
+        linear-gradient(0deg, transparent 48%, #e2e8f0 49%, #e2e8f0 51%, transparent 52%);
+    background-size: 80px 80px;
+    background-color: #f8fafc;
+}
+
+.delivery-map::before,
+.delivery-map::after {
+    content: "";
+    position: absolute;
+    background: #e2e8f0;
+    opacity: 0.7;
+}
+
+.delivery-map::before {
+    width: 120%;
+    height: 12px;
+    top: 45%;
+    right: -10%;
+    transform: rotate(-14deg);
+}
+
+.delivery-map::after {
+    width: 120%;
+    height: 10px;
+    top: 65%;
+    right: -10%;
+    transform: rotate(18deg);
+}
+
+.map-marker {
+    position: absolute;
+    z-index: 2;
+    width: 34px;
+    height: 34px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 3px solid #fff;
+    border-radius: 50% 50% 50% 0;
+    background: var(--dashboard-primary);
+    color: #fff;
+    box-shadow: 0 4px 12px rgba(15, 23, 42, 0.18);
+    transform: rotate(-45deg);
+}
+
+.map-marker i,
+.map-marker span {
+    transform: rotate(45deg);
+}
+
+.map-marker.delivery {
+    background: var(--dashboard-success);
+}
+
+.map-marker.warning {
+    background: var(--dashboard-warning);
+}
+
+.map-route {
+    position: absolute;
+    z-index: 1;
+    height: 3px;
+    background: var(--dashboard-primary);
+    transform-origin: right center;
+    opacity: 0.7;
+}
+
+/* =========================
+   السائقون
+========================= */
+
+.drivers-card {
+    grid-column: span 4;
+}
+
+.drivers-list {
+    padding: 8px 18px 14px;
+}
+
+.driver-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 13px 0;
+    border-bottom: 1px solid #f1f5f9;
+}
+
+.driver-item:last-child {
+    border-bottom: 0;
+}
+
+.driver-avatar {
+    width: 40px;
+    height: 40px;
+    flex: 0 0 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: #f1f5f9;
+    color: var(--dashboard-muted);
+    font-size: 13px;
+    font-weight: 800;
+}
+
+.driver-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.driver-info strong {
+    display: block;
+    color: var(--dashboard-dark);
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.driver-info small {
+    display: block;
+    margin-top: 3px;
+    color: var(--dashboard-muted);
+    font-size: 10px;
+}
+
+.driver-status {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 10px;
+    font-weight: 700;
+}
+
+.driver-status::before {
+    content: "";
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: #94a3b8;
+}
+
+.status-available {
+    color: var(--dashboard-success);
+}
+
+.status-available::before {
+    background: var(--dashboard-success);
+}
+
+.status-busy {
+    color: var(--dashboard-warning);
+}
+
+.status-busy::before {
+    background: var(--dashboard-warning);
+}
+
+.status-offline {
+    color: var(--dashboard-muted);
+}
+
+/* =========================
+   التنبيهات
+========================= */
+
+.alerts-card {
+    grid-column: span 4;
+}
+
+.alerts-list {
+    padding: 8px 18px 14px;
+}
+
+.alert-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 13px 0;
+    border-bottom: 1px solid #f1f5f9;
+}
+
+.alert-item:last-child {
+    border-bottom: 0;
+}
+
+.alert-icon {
+    width: 36px;
+    height: 36px;
+    flex: 0 0 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    font-size: 13px;
+}
+
+.alert-warning {
+    background: #fef3c7;
+    color: #b45309;
+}
+
+.alert-info {
+    background: #dbeafe;
+    color: #1d4ed8;
+}
+
+.alert-success {
+    background: #dcfce7;
+    color: #15803d;
+}
+
+.alert-danger {
+    background: #fee2e2;
+    color: #b91c1c;
+}
+
+.alert-content {
+    flex: 1;
+    min-width: 0;
+}
+
+.alert-content strong {
+    display: block;
+    color: var(--dashboard-dark);
+    font-size: 11px;
+    font-weight: 700;
+    line-height: 1.5;
+}
+
+.alert-content small {
+    display: block;
+    margin-top: 4px;
+    color: var(--dashboard-muted);
+    font-size: 9px;
+}
+
+/* =========================
+   الإشعارات المنبثقة
+========================= */
+
+.toast-container {
+    position: fixed;
+    z-index: 9999;
+    top: 82px;
+    left: 20px;
+    width: min(360px, calc(100vw - 40px));
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    direction: rtl;
+}
+
+.toast {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 14px;
+    background: #fff;
+    border: 1px solid var(--dashboard-border);
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(15, 23, 42, 0.14);
+    animation: dashboardToastIn 0.25s ease;
+}
+
+.toast-icon {
+    width: 32px;
+    height: 32px;
+    flex: 0 0 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    background: #eff6ff;
+    color: var(--dashboard-primary);
+}
+
+.toast-content {
+    flex: 1;
+}
+
+.toast-title {
+    margin: 0;
+    color: var(--dashboard-dark);
+    font-size: 12px;
+    font-weight: 800;
+}
+
+.toast-message {
+    margin: 4px 0 0;
+    color: var(--dashboard-muted);
+    font-size: 11px;
+    line-height: 1.5;
+}
+
+.toast-close {
+    border: 0;
+    background: transparent;
+    color: var(--dashboard-muted);
+    cursor: pointer;
+    font-size: 14px;
+}
+
+@keyframes dashboardToastIn {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* =========================
+   شاشة التحميل
+========================= */
+
+.loading-overlay {
+    position: fixed;
+    z-index: 10000;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(15, 23, 42, 0.45);
+    backdrop-filter: blur(3px);
+}
+
+.loading-box {
+    min-width: 170px;
+    padding: 25px 30px;
+    background: #fff;
+    border-radius: 14px;
+    box-shadow: 0 15px 40px rgba(15, 23, 42, 0.2);
+    text-align: center;
+}
+
+.loading-spinner {
+    width: 38px;
+    height: 38px;
+    margin: 0 auto 13px;
+    border: 3px solid #e2e8f0;
+    border-top-color: var(--dashboard-primary);
+    border-radius: 50%;
+    animation: dashboardSpin 0.8s linear infinite;
+}
+
+.loading-box p {
+    margin: 0;
+    color: var(--dashboard-text);
+    font-size: 12px;
+    font-weight: 700;
+}
+
+@keyframes dashboardSpin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* =========================
+   روابط وأزرار لوحة التحكم
+========================= */
+
+.dashboard-link {
+    color: var(--dashboard-primary);
+    font-size: 11px;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.dashboard-link:hover {
+    text-decoration: underline;
+}
+
+.dashboard-button {
+    min-height: 38px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    padding: 8px 14px;
+    border: 0;
+    border-radius: 9px;
+    background: var(--dashboard-primary);
+    color: #fff;
+    font-size: 12px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.dashboard-button:hover {
+    background: var(--dashboard-primary-dark);
+    transform: translateY(-1px);
+}
+
+.dashboard-button.secondary {
+    background: #f1f5f9;
+    color: var(--dashboard-text);
+}
+
+.dashboard-button.secondary:hover {
+    background: #e2e8f0;
+}
+
+/* =========================
+   تجاوب أساسي
+========================= */
+
+@media (max-width: 1200px) {
+
+    .stats-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .quick-actions-card,
+    .top-products-card,
+    .orders-card,
+    .returns-card,
+    .customers-card,
+    .drivers-card,
+    .alerts-card {
+        grid-column: span 6;
+    }
+
+    .sales-chart-card,
+    .inventory-card,
+    .recent-sales-card,
+    .delivery-card {
+        grid-column: span 12;
+    }
+
+    .purchases-card,
+    .suppliers-card {
+        grid-column: span 6;
+    }
+}
+
+@media (max-width: 900px) {
+
+    .dashboard-content {
+        padding: 18px;
+    }
+
+    .dashboard-page-header {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .dashboard-page-header h1,
+    .dashboard-page-header h2 {
+        font-size: 21px;
+    }
+
+    .stats-grid {
+        gap: 12px;
+    }
+
+    .dashboard-grid {
+        gap: 14px;
+    }
+
+    .quick-actions-card,
+    .top-products-card,
+    .orders-card,
+    .returns-card,
+    .customers-card,
+    .drivers-card,
+    .alerts-card,
+    .purchases-card,
+    .suppliers-card {
+        grid-column: span 12;
+    }
+}
+
+@media (max-width: 600px) {
+
+    .dashboard-content {
+        padding: 14px;
+    }
+
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .stat-card {
+        min-height: 110px;
+        padding: 16px;
+    }
+
+    .stat-card-icon {
+        width: 46px;
+        height: 46px;
+        flex-basis: 46px;
+        margin-left: 12px;
+        border-radius: 11px;
+    }
+
+    .stat-value {
+        font-size: 22px;
+    }
+
+    .card-header {
+        padding: 13px 15px;
+    }
+
+    .quick-actions {
+        padding: 14px;
+        gap: 9px;
+    }
+
+    .quick-action {
+        min-height: 78px;
+    }
+
+    .sales-chart {
+        padding: 14px;
+    }
+
+    .chart-wrapper {
+        height: 220px;
+        padding-right: 35px;
+    }
+
+    .chart-grid-lines,
+    .chart-line {
+        right: 35px;
+    }
+
+    .chart-days {
+        right: 35px;
+    }
+
+    .chart-y-axis {
+        width: 30px;
+    }
+
+    .dashboard-table th,
+    .dashboard-table td,
+    .recent-sales-table th,
+    .recent-sales-table td {
+        padding: 11px 12px;
+    }
+
+    .delivery-map {
+        min-height: 220px;
+    }
+
+    .toast-container {
+        top: 70px;
+        left: 10px;
+        width: calc(100vw - 20px);
+    }
+}
+
+@media (max-width: 380px) {
+
+    .dashboard-content {
+        padding: 10px;
+    }
+
+    .stat-card {
+        padding: 13px;
+    }
+
+    .stat-value {
+        font-size: 20px;
+    }
+
+    .quick-actions {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .quick-action span:last-child {
+        font-size: 10px;
+    }
+
+    .dashboard-page-header h1,
+    .dashboard-page-header h2 {
+        font-size: 19px;
+    }
+}
+
+/* =========================
+   تحسين الطباعة
+========================= */
+
+@media print {
+
+    .sidebar,
+    .dashboard-header,
+    .mobile-menu-button,
+    .sidebar-overlay,
+    .toast-container {
+        display: none !important;
+    }
+
+    .main-content {
+        margin: 0 !important;
+        width: 100% !important;
+    }
+
+    .dashboard-content {
+        margin: 0 !important;
+        padding: 10px !important;
+    }
+
+    .dashboard-card,
+    .stat-card {
+        box-shadow: none !important;
+        break-inside: avoid;
+    }
+
+    body {
+        background: #fff !important;
+    }
+}
