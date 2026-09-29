@@ -608,7 +608,7 @@
                  17 - ROLES & PERMISSIONS
             ------------------------------------------ -->
 
-            <a href="employees.html#permissions"
+            <a href="permissions.html"
                class="nav-item"
                data-page="permissions">
 
@@ -3870,44 +3870,12 @@ style="display: none;">
 
 
 <!-- =====================================================
-     FIREBASE / APPLICATION SCRIPTS
+     SYSTEM SCRIPTS
 ====================================================== -->
-
-<!-- Firebase configuration -->
-
-<script type="module"
-        src="js/firebase-config.js">
-</script>
-
-
-<!-- Authentication -->
-
-<script type="module"
-        src="js/auth.js">
-</script>
-
-
-<!-- Permissions -->
-
-<script type="module"
-        src="js/permissions.js">
-</script>
-
-
-<!-- Dashboard -->
-
-<script type="module"
-        src="js/dashboard.js">
-</script>
-
-
-<!-- Main application -->
-
-<script type="module"
-        src="js/app.js">
-</script>
-
-
+<script src="js/data.js"></script>
+<script src="js/system.js"></script>
+<script src="js/app.js"></script>
+<script src="js/dashboard.js"></script>
 
 <!-- =====================================================
      DASHBOARD BASIC UI
@@ -3916,6 +3884,8 @@ style="display: none;">
 <script>
 
 document.addEventListener("DOMContentLoaded", function () {
+
+    if (!BS.currentUser()) { window.location.href = "index.html"; return; }
 
 
     /* ================================================
