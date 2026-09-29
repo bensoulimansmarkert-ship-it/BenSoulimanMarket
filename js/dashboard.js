@@ -1095,6 +1095,22 @@ Dashboard.getApplicationData = function () {
 
 Dashboard.calculateStatistics = function (data) {
 
+    /* Use the integrated accounting engine when available. */
+    if (window.BS && typeof window.BS.metrics === "function") {
+
+        const m = window.BS.metrics();
+
+        return {
+            sales: m.revenue,
+            profit: m.netProfit,
+            invoices: m.invoices,
+            orders: m.orders,
+            products: data.products.length,
+            customers: data.customers.length
+        };
+
+    }
+
     const sales =
         Array.isArray(data.sales)
             ? data.sales
